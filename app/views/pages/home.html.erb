@@ -1,2 +1,69 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div>
+  <div class="typewriter">
+  <h1>Welcome to your island</h1>
+  </div>
+  <div id="carousel-islands" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="island-item" style="background-image: url('<%= cloudinary_url("island_1") %>')">
+        </div>
+      </div>
+      <div class="item">
+        <div class="island-item" style="background-image: url('<%= cloudinary_url("island_2") %>')">
+        </div>
+      </div>
+      <div class="item">
+        <div class="island-item" style="background-image: url('<%= cloudinary_url("island_3") %>')">
+        </div>
+      </div>
+      <div class="item">
+        <div class="island-item" style="background-image: url('<%= cloudinary_url("island_4") %>')">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="container space-around">
+  <div class="row">
+    <div class="col-md-4">
+      <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la">
+      <div class="space-inside">
+      <h5>
+        <strong>Browse</strong>
+      </h5>
+      <p>
+        Le faux-texte est, en imprimerie, un texte sans signification, dont le seul objectif est de calibrer le contenu d'une page par du texte, fût-il non éditorial.
+      </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la">
+      <div class="space-inside">
+      <h5>
+        <strong>Browse</strong>
+      </h5>
+      <p>
+        Le faux-texte est, en imprimerie, un texte sans signification, dont le seul objectif est de calibrer le contenu d'une page par du texte, fût-il non éditorial.
+      </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la">
+      <div class="space-inside">
+      <h5>
+        <strong>Browse</strong>
+      </h5>
+      <p>
+        Le faux-texte est, en imprimerie, un texte sans signification, dont le seul objectif est de calibrer le contenu d'une page par du texte, fût-il non éditorial.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
