@@ -3,15 +3,10 @@ class IslandsController < ApplicationController
     @islands = Island.all
   end
 
-  def new
-    @island = Island.new(island_params)
-    @island.save
-  end
-
   def create
     @island = Island.new(island_params)
     if @island.save
-      redirect_to island_path(@island)
+      redirect_to edit_island_path(@island)
     else
       render :new
     end
