@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const carousel = () => {
   $(document).ready(function(){
-    $('.carousel').slick({
+    $('.carousel-index').slick({
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 3,
