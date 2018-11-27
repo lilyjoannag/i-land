@@ -10,7 +10,12 @@
         <% @islands.each do |island| %>
           <div class="carousel-item card">
             <div class="card-body">
-              <h1>island.name</h1>
+              <h2><%=  island.name%></h2>
+              <div class="description-hidden">
+                <p><%=  island.description%></p>
+                <%= link_to "", island_path(island), class: "card-link" %>
+              </div>
+
             </div>
             <div class="card-footer">
               <div >
@@ -21,7 +26,10 @@
                 <p>50000</p>
                 <i class="fas fa-dollar-sign"></i>
               </div>
+
             </div>
+
+
           </div>
         <% end %>
       </div>
