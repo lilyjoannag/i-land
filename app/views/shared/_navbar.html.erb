@@ -1,7 +1,10 @@
 <div class="navbar-island">
-  <%= link_to islands_path, class: "logo" do %>
-    Iland
-  <% end %>
+
+  <a href="islands">
+  <%= cl_image_tag("i-land2",
+      width: 117, height: 80, crop: :fill) %>
+  </a>
+
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-island-brand" do %>
   <% end %>
@@ -12,7 +15,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Add a dream", "#", class: "navbar-island-item navbar-island-link" %>
+      <a class="navbar-island-item navbar-island-link" data-toggle="modal" data-target="#exampleModal">
+        Add a dream
+      </a>
 
       <%= link_to "My reservations", "#", class: "navbar-island-item navbar-island-link" %>
 
@@ -71,25 +76,28 @@
   </div>
 </div>
 
-<div class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-text">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h3 class="modal-title">New Product Alert!</h3>
-        </div>
-        <div class="modal-body">
-          <h4>Codebrainery Wizard</h4>
-          <p>Sign up today for tons of new, in-depth web development training, and live support from our team of Codebrainery CodeGuides.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Try it now</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Maybe later</button>
-        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please provide your island's name and its address so people can embark on their dream holiday</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-center">
+          <%= simple_form_for(Island.new) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :address %>
+            <%= f.submit "Add island", class: "btn btn-primary" %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <% end %>
       </div>
     </div>
   </div>
-
+</div>
+</div>
 
