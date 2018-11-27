@@ -8,9 +8,12 @@ import "slick-carousel/slick/slick-theme.css";
 const carousel = () => {
   $(document).ready(function(){
     $('.carousel').slick({
-      // infinite: true,
+      infinite: true,
       slidesToShow: 3,
       slidesToScroll: 3,
+      arrows: true,
+      nextArrow: '<i class="fas fa-angle-right"></i>',
+      prevArrow: '<i class="fas fa-angle-left"></i>',
     });
   });
 };
