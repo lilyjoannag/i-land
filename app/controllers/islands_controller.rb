@@ -9,9 +9,13 @@ class IslandsController < ApplicationController
   end
 
   def create
-    @island = Island.create(island_params)
+    @island = Island.new(island_params)
+    if @island.save
+      redirect_to island_path(@island)
+    else
+      render :new
+    end
   end
-
 
   def show
     @island = Island.find(params[:id])

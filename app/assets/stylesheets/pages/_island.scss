@@ -2,29 +2,23 @@
   display: grid;
   grid-template-columns: 500px 1fr;
   grid-template-rows: 40% 30% 30%;
-  height: 100vh;
+  height: 200vh;
   background-image: cover;
   grid-column-gap: 0;
   grid-row-gap: 0;
   border: 1px solid grey;
+  font-family: 'Work Sans', sans-serif;
 }
 
+h3, p {
+  font-family: 'Work Sans', sans-serif;
+}
 
 .photo-element {
   grid-row: 1 / span 1;
   grid-column: 1 / span 2;
-  border: none;
 }
-  .island-seed-photo.png {
-    background-image: cover;
-    background-repeat: no-repeat;
 
-  }
-// .photo-element {
-//   image_tag {
-
-//   }
-// }
 
 .description-element {
   grid-row: 2 / span 1;
