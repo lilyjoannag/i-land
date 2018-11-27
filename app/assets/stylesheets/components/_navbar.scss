@@ -2,13 +2,18 @@
 .navbar-island {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   // background: #868aa7;
-  background:#596180;
+
+  background:#152b42;
   transition: all 0.3s ease;
   height: 60px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index:1000;
 }
 
 /* Logo */
@@ -83,4 +88,8 @@
   font-size:20px;
   font-family: 'Cinzel', cursive;
 
+}
+.logo:hover {
+  color: lightgrey;
+  text-decoration: none;
 }
