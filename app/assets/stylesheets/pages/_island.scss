@@ -10,10 +10,19 @@
   font-family: 'Work Sans', sans-serif;
 }
 
-h3, p {
-  font-family: 'Work Sans', sans-serif;
+.show-card {
+  margin: 15px;
+  padding: 10px;
 }
 
+h3, {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Work Sans', sans-serif;
+}
 .photo-element {
   grid-row: 1 / span 1;
   grid-column: 1 / span 2;
@@ -42,4 +51,9 @@ h3, p {
 
 .show-card {
   border: 1px solid grey;
+}
+
+.update-island-button {
+  text-align: center;
+  justify-content: center;
 }

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 500px 1fr;
   grid-template-rows: 40% 30% 30%;
-  height: 100vh;
+  height: 200vh;
   background-image: cover;
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -14,4 +14,9 @@
 // }
 .update-island-button {
   margin-top: 20px;
+}
+
+.edit_island
+ description-element {
+  height: 300px;
 }

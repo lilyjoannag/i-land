@@ -5,11 +5,12 @@ class IslandsController < ApplicationController
 
   def create
     @island = Island.new(island_params)
-    if @island.save
-      redirect_to edit_island_path(@island)
-    else
-      render :new
-    end
+    @island.user = current_user
+    @island.save!
+    redirect_to edit_island_path(@island)
+    # else
+    #   render :new
+    # end
   end
 
   def show
