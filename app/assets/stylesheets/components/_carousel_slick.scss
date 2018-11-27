@@ -1,5 +1,5 @@
 .carousel-item {
-  background: #CCC;
+  background: #DDD;
   width: 300px;
   height: 300px;
 
@@ -13,11 +13,11 @@
 .carousel-index {
   display: flex !important;
   align-items: center;
-  i {
-    font-size: 50px;
-    height: 300px;
-    display: flex;
-    align-items: center;
+}
 
-  }
+.fa-angle-right, .fa-angle-left {
+  font-size: 50px;
+  height: 300px;
+  display: flex;
+  align-items: center;
 }
