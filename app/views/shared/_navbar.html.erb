@@ -1,12 +1,11 @@
 <div class="navbar-island" id="<%= yield :navbar_id %>">
 
-  <a href="">
+  <a href=<%= root_path %>>
   <%= image_tag("i-land2.png", id:"logotag") %>
   </a>
 
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-island-brand" do %>
-  <% end %>
+
 
   <!-- Right Navigation -->
   <div class="navbar-island-right hidden-xs hidden-sm">
