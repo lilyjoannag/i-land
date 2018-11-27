@@ -1,5 +1,5 @@
 <div class="navbar-island">
-  <%= link_to "#", class: "logo" do %>
+  <%= link_to islands_path, class: "logo" do %>
     Iland
   <% end %>
   <!-- Logo -->
@@ -41,7 +41,11 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-island-item navbar-island-link" %>
+      <%= link_to t(".sign_up", default: "Register"), new_user_registration_path, class: "navbar-island-item navbar-island-link" %>
       <%= link_to "Add a dream", new_user_registration_path, class: "navbar-island-item navbar-island-link" %>
+
+
+
 
     <% end %>
   </div>
