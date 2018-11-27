@@ -1,0 +1,24 @@
+<div class="grid">
+
+  <%= simple_form_for(@island) do |f| %>
+
+    <div class="show-card photo-element" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%#= cl_image_path @island.photos.last, height: 300, width: 400, crop: :fill %>')">
+    </div>
+     <%= f.file_field :photos, multiple: true %>
+    <div class="show-card description-element">
+      <h3><%= f.input :name %></h3>
+      <p><%= f.input :description %></p>
+    </div>
+      <div class="show-card dates-element">
+        <h3>Dates</h3>
+      </div>
+      <div class="show-card map-element">
+        <h3>Map</h3>
+      </div>
+      <div class="show-card owner-element">
+        <h3>Owner</h3>
+      </div>
+    <%= f.submit %>
+  <% end %>
+
+</div>
