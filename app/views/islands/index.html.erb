@@ -6,7 +6,7 @@
     <div id="map">
     </div>
     <div class="cards">
-      <div class="carousel">
+      <div class="carousel-index">
         <div class="carousel-item"><h3>1</h3></div>
         <div class="carousel-item"><h3>2</h3></div>
         <div class="carousel-item"><h3>3</h3></div>
@@ -60,13 +60,8 @@
               });
             });
 
-    var markerCluster = new MarkerClusterer(map, markers, {imagePath: "https://github.com/googlemaps/v3-utility-library/blob/master/markerclusterer/images/m1.png"});
-    console.log(markerCluster)
-    var marker = new google.maps.Marker({
-        position: {lat: 20, lng: -71.044},
-        map: map,
-        title: 'Hello World!',
-      });
+    var markerCluster = new MarkerClusterer(map, markers, {imagePath:'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
 }
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
