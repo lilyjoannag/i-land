@@ -1,7 +1,7 @@
 .edit_island {
   display: grid;
-  grid-template-columns: 500px 1fr;
-  grid-template-rows: 40% 30% 30%;
+  grid-template-columns: 600px 1fr;
+  grid-template-rows: 40% 37% 23%;
   height: 200vh;
   background-image: cover;
   grid-column-gap: 0;
@@ -14,9 +14,37 @@
 // }
 .update-island-button {
   margin-top: 20px;
+  height: 50px;
+  width: 100px;
+  justify-contetn: center;
+  text-align: center;
 }
 
 
 #island_description {
   height: 200px;
+}
+
+
+.owner-name {
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+}
+
+.owner-edit-info {
+  display: flex;
+  align-items: center;
+}
+
+#address_description {
+  margin-top: 15px;
+}
+
+.update-island-button {
+  height: 40px;
+  width: 200px;
+  justify-self: center;
+  text-self: center;
+  grid-column: 1 / 2;
 }
