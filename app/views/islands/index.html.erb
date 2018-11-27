@@ -7,12 +7,23 @@
     </div>
     <div class="cards">
       <div class="carousel-index">
-        <div class="carousel-item"><h3>1</h3></div>
-        <div class="carousel-item"><h3>2</h3></div>
-        <div class="carousel-item"><h3>3</h3></div>
-        <div class="carousel-item"><h3>4</h3></div>
-        <div class="carousel-item"><h3>5</h3></div>
-        <div class="carousel-item"><h3>6</h3></div>
+        <% @islands.each do |island| %>
+          <div class="carousel-item card">
+            <div class="card-body">
+              <h1>island.name</h1>
+            </div>
+            <div class="card-footer">
+              <div >
+                <p>20</p>
+                <i class="fas fa-users"></i>
+              </div>
+              <div>
+                <p>50000</p>
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -69,7 +80,6 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Gmaps JavaScript -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
