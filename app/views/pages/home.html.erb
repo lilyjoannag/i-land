@@ -1,7 +1,7 @@
 
 <div>
   <div class="typewriter">
-  <h1>Welcome to your island</h1>
+    <h1>Welcome to your island</h1>
   </div>
   <div id="carousel-islands" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
@@ -26,11 +26,12 @@
     </div>
   </div>
 
-
 <div class="container space-around">
   <div class="row">
     <div class="col-md-4">
-      <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la">
+      <div class="text-center">
+        <%= image_tag("image_1", height: '170') %>
+      </div>
       <div class="space-inside">
       <h5>
         <strong>Browse</strong>
@@ -41,10 +42,13 @@
       </div>
     </div>
     <div class="col-md-4">
-      <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la">
+      <div class="text-center">
+        <%= image_tag("image_2", height: '170') %>
+      </div>
+      <!-- <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la"> -->
       <div class="space-inside">
       <h5>
-        <strong>Browse</strong>
+        <strong>Select</strong>
       </h5>
       <p>
         Le faux-texte est, en imprimerie, un texte sans signification, dont le seul objectif est de calibrer le contenu d'une page par du texte, fût-il non éditorial.
@@ -52,10 +56,12 @@
       </div>
     </div>
     <div class="col-md-4">
-      <img class="image_scenario center-block" src="https://via.placeholder.com/150" alt="Je suis la">
+      <div class="text-center">
+        <%= image_tag("image_3", height: '170') %>
+      </div>
       <div class="space-inside">
       <h5>
-        <strong>Browse</strong>
+        <strong>Enjoy</strong>
       </h5>
       <p>
         Le faux-texte est, en imprimerie, un texte sans signification, dont le seul objectif est de calibrer le contenu d'une page par du texte, fût-il non éditorial.
@@ -63,7 +69,6 @@
       </div>
     </div>
   </div>
-</div>
 
 
 </div>
