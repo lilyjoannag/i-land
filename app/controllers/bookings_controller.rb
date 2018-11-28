@@ -1,17 +1,19 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:create, :show, :edit, :update, :destroy]
+  before_action :set_booking, only: [ :show, :edit, :update, :destroy]
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
   def create
     @booking = Booking.new(booking_params)
     @island = Island.find(params[:island_id])
+    @booking.user = current_user
     @booking.island = @island
     authorize @booking
-    if @booking.save
-      redirect_to user_booking_path(@booking)
+    if @booking.save!
+      redirect_to user_bookings_path(current_user)
     else
-      render "islands/show"
+      redirect_to island_path(@island)
+    end
   end
   def show
     authorize @booking
