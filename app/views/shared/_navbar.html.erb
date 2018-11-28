@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <a class="navbar-island-item navbar-island-link" data-toggle="modal" data-target="#exampleModal">
+      <a class="navbar-island-item navbar-island-link" data-toggle="modal" data-target="#formModal">
         Add a dream
       </a>
 
@@ -25,7 +25,7 @@
           <%= image_tag "https://www.aquaportail.com/pictures1804/palmier-cocos-nucifera-cocotier.jpg", class: "avatar dropdown-toggle", id: "navbar-island-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-island-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to users_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
@@ -76,11 +76,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog width-400" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please provide your island's name and its address so people can embark on their dream holiday</h5>
+      <div class="modal-header flex-center-between">
+        <h5 class="modal-title" id="formModalLabel">Enter your details to make a dream come true</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -88,9 +88,9 @@
       <div class="modal-body">
         <div class="form-center">
           <%= simple_form_for(Island.new) do |f| %>
-            <%= f.input :name %>
-            <%= f.input :address %>
-            <%= f.submit "Add island", class: "btn btn-primary" %>
+            <%= f.input :name, input_html: { placeholder: "Ila vida" } %>
+            <%= f.input :address, input_html: { placeholder: "13 rue Paradise" } %>
+            <%= f.submit "Add island", class: "btn btn-pink" %>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <% end %>
       </div>

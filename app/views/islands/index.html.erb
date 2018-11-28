@@ -1,6 +1,12 @@
 <div class="wrapper">
   <div class="side-search">
-    <h1>To do</h1>
+    <div class="search_container">
+        <p class="search_title">
+            Embark on your journey
+        </p>
+        <input class="search__input" type="text" placeholder="Search">
+    </div>
+
   </div>
   <div class="content col-xs-10 col-xs-offset-1 ">
     <div id="map" data-markers="<%= @markers.to_json %>">
@@ -8,7 +14,7 @@
     <div class="cards">
       <div class="carousel-index">
         <% @islands.each do |island| %>
-          <div class="carousel-item card">
+          <div class="carousel-index-card-item card">
             <div class="card-body">
               <h2><%=  island.name%></h2>
               <div class="description-hidden">
