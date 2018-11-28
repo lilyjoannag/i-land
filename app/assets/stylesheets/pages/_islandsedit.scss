@@ -20,12 +20,22 @@
   text-align: center;
 }
 
+p {
 
-#island_description {
-  height: 200px;
-  margin-right: 10px;
 }
 
+#island_description {
+  height: 230px;
+  width: 430px;
+  margin: 10px;
+
+}
+
+#island_name {
+  width: 430px;
+  height: 30px;
+  margin: 10px;
+}
 
 .owner-name {
   justify-content: center;
@@ -38,8 +48,9 @@
   align-items: center;
 }
 
-#address_description {
+#island_address {
   margin-top: 15px;
+  width: 430px;
 }
 
 .update-island-button {
