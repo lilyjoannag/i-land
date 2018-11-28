@@ -1,3 +1,7 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= cloudinary_url("island_2")  %>')">
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <h2 class="profile-title" align="center" >Your Booking</h2>
@@ -7,11 +11,6 @@
            <div class="panel-body">
             <div class="box box-info">
               <div class="box-body">
-                <div class="col-sm">
-                  <div align="center">
-                            <div class="island-item" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= cloudinary_url("island_2") %>')">
-        </div>
-                  </div>
                     <div class="clearfix"></div>
                     <hr style="margin:5px 0 5px 0;">
                     <div class="col-sm-5 col-xs-6 tital " >The Island:</div><div class="col-sm-7 col-xs-6 "><%= @booking.island.name %></div>
