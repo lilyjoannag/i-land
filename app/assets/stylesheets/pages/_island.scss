@@ -3,7 +3,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 700px 1fr;
+  grid-template-columns: 900px 1fr;
   grid-template-rows: 40% 30% 30%;
   height: 200vh;
   background-image: cover;
@@ -75,6 +75,9 @@ p {
   height: 70vh;
 }
 
+.show-card {
+  background-color: white;
+}
 // .carousel-item {
 //   position: relative;
 //   display: none;

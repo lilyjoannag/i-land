@@ -2,7 +2,8 @@
 .side-search {
   background: #EEE;
   width: 400px;
-  display: hidden;
+  display: none;
+
 }
 
 .wrapper {
@@ -22,18 +23,19 @@ body {
  }
 
 .search {
-    &__container {
+
+    .search_container {
         padding-top: 64px;
     }
 
-    &__title {
+    .search_title {
         font-size: 22px;
         font-weight: 900;
         text-align: center;
         color: #568dd0;
     }
 
-    &__input {
+    input {
         width: 100%;
         padding: 12px 24px;
 
@@ -46,7 +48,6 @@ body {
         border-radius: 50px;
         border: 1px solid #575756;
         transition: all 250ms ease-in-out;
-        backface-visibility: hidden;
         transform-style: preserve-3d;
 
         &::placeholder {
