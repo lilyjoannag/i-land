@@ -1,7 +1,7 @@
 .edit_island {
   display: grid;
-  grid-template-columns: 600px 1fr;
-  grid-template-rows: 40% 37% 23%;
+  grid-template-columns: 900px 1fr;
+  grid-template-rows:  25% 25% 25% 25%;
   height: 200vh;
   background-image: cover;
   grid-column-gap: 0;
@@ -16,17 +16,15 @@
   margin-top: 20px;
   height: 50px;
   width: 100px;
-  justify-contetn: center;
+  justify-content: center;
   text-align: center;
 }
 
-p {
 
-}
 
 #island_description {
   height: 230px;
-  width: 430px;
+  width: 400px;
   margin: 10px;
 
 }
