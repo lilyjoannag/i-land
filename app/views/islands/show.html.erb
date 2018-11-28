@@ -60,7 +60,7 @@
       <%= simple_form_for [@island, @booking] do |f| %>
         <%= f.input :start_at %>
         <%= f.input :end_at %>
-        <%= f.submit %>
+        <%= f.submit class: "btn btn-primary" %>
       <% end %>
     </div>
     <div class="show-card map-element">
