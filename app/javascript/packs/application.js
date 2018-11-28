@@ -10,4 +10,4 @@ import { initAutocomplete } from "../plugins/init_autocomplete";
 carousel();
 initUpdateNavbarOnScroll();
 initMap();
-initAutocomplete();
+initAutocomplete()
