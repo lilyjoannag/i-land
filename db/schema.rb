@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 2018_11_28_140148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.string "photo_1"
     t.string "photo_2"
     t.string "photo_3"
-    t.float "latitude"
-    t.float "longitude"
     t.index ["user_id"], name: "index_islands_on_user_id"
   end
 

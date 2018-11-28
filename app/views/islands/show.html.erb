@@ -36,7 +36,17 @@
     </div>
     <div class="show-card description-element">
       <h3>Description</h3>
+
+      <div class="show-card infos-element">
+        <h3>Number of guests</h3>
+        <h3>price</h3>
+      </div>
+      <div class="show-card owner-element">
+        <h3>Owner</h3>
+      </div>
+
       <%= @island.description %>
+
     </div>
     <div class="show-card dates-element">
       <%  @booking = Booking.new%>
@@ -48,10 +58,6 @@
     </div>
     <div class="show-card map-element">
       <h3>Map</h3>
-    </div>
-    <div class="show-card owner-element">
-      <h3>Owner</h3>
-      <p>Contact email: <%= @island.user.email %></p>
     </div>
   </div>
 </div>
