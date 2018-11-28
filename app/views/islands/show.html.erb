@@ -11,11 +11,15 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-          <% @island.photos.each_with_index do |photo, index| %>
-            <div class="item <%= "active" if index == 0 %>">
-              <%= cl_image_tag photo, width: 2000, height: 700, crop: :fill %>
-            </div>
-          <% end %>
+          <div class="item active">
+            <%= cl_image_tag @island.photo_1, width: 2000, height: 730, crop: :fill %>
+          </div>
+          <div class="item">
+            <%= cl_image_tag @island.photo_2, width: 2000, height: 730, crop: :fill %>
+          </div>
+          <div class="item">
+            <%= cl_image_tag @island.photo_3, width: 2000, height: 730, crop: :fill %>
+          </div>
         </div>
 
         <!-- Controls -->
@@ -32,6 +36,7 @@
     </div>
     <div class="show-card description-element">
       <h3>Description</h3>
+
       <div class="show-card infos-element">
         <h3>Number of guests</h3>
         <h3>price</h3>
@@ -39,6 +44,9 @@
       <div class="show-card owner-element">
         <h3>Owner</h3>
       </div>
+
+      <%= @island.description %>
+
     </div>
     <div class="show-card dates-element">
       <%  @booking = Booking.new%>
@@ -51,7 +59,6 @@
     <div class="show-card map-element">
       <h3>Map</h3>
     </div>
-
   </div>
 </div>
 

@@ -2,7 +2,12 @@
   <%= simple_form_for(@island) do |f| %>
     <div class="show-card photo-element">
       <h3>Add Photos of Your Island</h3>
-      <%= f.input :photos, as: :file, input_html: { multiple: true, name: "island[photos]" } %>
+      <%= f.input :photo_1 %>
+      <%= f.input :photo_1_cache, as: :hidden %>
+      <%= f.input :photo_2 %>
+      <%= f.input :photo_2_cache, as: :hidden %>
+      <%= f.input :photo_3 %>
+      <%= f.input :photo_3_cache, as: :hidden %>
     </div>
     <div class="show-card description-element">
       <h3><%= f.input :name, placeholder:"Enter your Island Name" %></h3>
