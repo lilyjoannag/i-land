@@ -17,11 +17,11 @@ class IslandPolicy < ApplicationPolicy
     @record.user == user
   end
 
-  def update
-    edit?
+  def update?
+    @record.user == user
   end
 
-  def destroy
+  def destroy?
     edit?
   end
 end
