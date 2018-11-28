@@ -4,7 +4,7 @@
 .grid {
   display: grid;
   grid-template-columns: 900px 1fr;
-  grid-template-rows: 40% 30% 30%;
+  grid-template-rows: 25% 25% 25% 25%;
   height: 200vh;
   background-image: cover;
   grid-column-gap: 0;
@@ -27,40 +27,51 @@ p {
   font-family: 'Work Sans', sans-serif;
 }
 .photo-element {
-  grid-row: 1 / span 1;
+  grid-row: 1 / span 2;
   grid-column: 1 / span 2;
   margin: 0
 }
 
 
 .description-element {
-  grid-row: 2 / span 1;
+  grid-row: 2 / span 2;
   grid-column: 1 / span 1;
   margin-left: 80px;
+  margin-right: 50px;
   margin-top: 20px;
+  position: relative;
 }
 
 .map-element {
-  grid-row: 3 / span 1;
-  grid-column: 1 / span 1;
-  margin-left: 80px;
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 2;
+  margin:  20px 80px;
+}
+.infos-element {
+  height: 25%;
+  width: 300px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 
 .dates-element {
-  grid-row: 2 / span 1;
+  grid-row: 2 / span 2;
   grid-column: 2 / span 1;
   margin-right: 80px;
   margin-top: 20px;
 }
 
 .owner-element {
-  grid-row: 3 / span 1;
-  grid-column: 2 / span 1;
-  margin-right: 80px;
+  position: absolute;
+  height: 60%;
+  width: 300px;
+  bottom: 30px;
+  right: 30px;
 }
 
 .show-card {
-  box-shadow: 2px 1px 1px lightgrey;
+  box-shadow: 3px 3px 5px lightgrey;
   // border: 0.3px solid #D3D3D3;
 }
 
