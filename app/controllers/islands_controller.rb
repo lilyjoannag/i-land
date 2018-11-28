@@ -12,6 +12,7 @@ class IslandsController < ApplicationController
 
   def create
     @island = Island.new(island_params)
+    authorize @island
     @island.user = current_user
     @island.save!
     redirect_to edit_island_path(@island)
@@ -22,14 +23,17 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find(params[:id])
+    authorize @island
   end
 
   def edit
     @island = Island.find(params[:id])
+    authorize @island
   end
 
   def update
     @island = Island.find(params[:id])
+    authorize @island
     @island.update(island_params)
     # @island.name = island_params[:name]
     # @island.number_of_guests = island_params[:number_of_guests]
