@@ -16,6 +16,20 @@
   z-index:1000;
 }
 
+
+div#navbar_home {
+    position: fixed;
+    background: transparent;
+    box-shadow: none;
+    transition: 0.5s background-color ease;
+
+    &.navbar-island-blue {
+      background: #152b42;
+      box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+      transition: background-color 200ms linear;
+    }
+}
+
 #logotag {
   width: 86px;
   height: 92px;
@@ -97,4 +111,32 @@
 .logo:hover {
   color: lightgrey;
   text-decoration: none;
+}
+
+
+
+#formModalLabel{
+  color: #686b76;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 2s steps(60, end);
+}
+
+
+.btn-pink {
+  color: #fff;
+  background-color: #ed8a8a;
+  border-color: #ced4d8;
+}
+
+.btn-pink:hover {
+  background-color: lightgrey;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog.width-400 {
+    width: 500px;
+  }
 }

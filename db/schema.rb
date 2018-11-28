@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_11_28_140148) do
     t.string "photo_1"
     t.string "photo_2"
     t.string "photo_3"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_islands_on_user_id"
   end
 

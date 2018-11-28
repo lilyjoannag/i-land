@@ -1,10 +1,19 @@
 class IslandsController < ApplicationController
   def index
-    @islands = Island.all
+    @islands_pundit = policy_scope(Island)
+    @islands = @islands_pundit.where.not(latitude: nil, longitude: nil)
+    @markers = @islands.map do |island|
+         {
+           lng: island.longitude,
+           lat: island.latitude,
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+         }
+    end
   end
 
   def create
     @island = Island.new(island_params)
+    authorize @island
     @island.user = current_user
     @island.save!
     redirect_to edit_island_path(@island)
@@ -15,14 +24,17 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find(params[:id])
+    authorize @island
   end
 
   def edit
     @island = Island.find(params[:id])
+    authorize @island
   end
 
   def update
     @island = Island.find(params[:id])
+    authorize @island
     @island.update(island_params)
     # @island.name = island_params[:name]
     # @island.number_of_guests = island_params[:number_of_guests]

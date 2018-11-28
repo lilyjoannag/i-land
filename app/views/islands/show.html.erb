@@ -39,7 +39,12 @@
       <%= @island.description %>
     </div>
     <div class="show-card dates-element">
-      <h3>Dates</h3>
+      <%  @booking = Booking.new%>
+      <%= simple_form_for [@island, @booking] do |f| %>
+        <%= f.input :start_at %>
+        <%= f.input :end_at %>
+        <%= f.submit %>
+      <% end %>
     </div>
     <div class="show-card map-element">
       <h3>Map</h3>

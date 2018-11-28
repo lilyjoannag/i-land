@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>Your Booking</h1>
+    </div>
+    <div class="col-sm">
+      <%= @booking.island.name %> en <%= @booking.island.address %>
+    </div>
+    <div class="col-sm">
+      <%= @booking.island.description %>
+    </div>
+    <div class="col-sm">
+      <%= @booking.island.number_of_guests %> people can stay
+    </div>
+    <div class="col-sm">
+      <%= @booking.island.price_per_night %> €/night
+    </div>
+    <div class="col-sm">
+      Booking from <%= @booking.start_at %> to <%= @booking.end_at %>
+    </div>
+  </div>
+</div>
