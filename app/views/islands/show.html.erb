@@ -1,17 +1,49 @@
-<div class="grid">
-  <div class="show-card photo-element" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @island.photos, height: 300, width: 400, crop: :fill unless @island.photos.empty? %>')">
-    </h3>
-  </div>
-  <div class="show-card description-element">
-    <h3>Description</h3>
-  </div>
-  <div class="show-card dates-element">
-    <h3>Dates</h3>
-  </div>
-  <div class="show-card map-element">
-    <h3>Map</h3>
-  </div>
-  <div class="show-card owner-element">
-    <h3>Owner</h3>
+<div class="grid-container">
+  <div class="grid">
+    <div class="show-card photo-element">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <% @island.photos.each_with_index do |photo, index| %>
+            <div class="item <%= "active" if index == 0 %>">
+              <%= cl_image_tag photo, width: 2000, height: 700, crop: :fill %>
+            </div>
+          <% end %>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+    <div class="show-card description-element">
+      <h3>Description</h3>
+    </div>
+    <div class="show-card dates-element">
+      <h3>Dates</h3>
+    </div>
+    <div class="show-card map-element">
+      <h3>Map</h3>
+    </div>
+    <div class="show-card owner-element">
+      <h3>Owner</h3>
+    </div>
   </div>
 </div>
+
+
+
