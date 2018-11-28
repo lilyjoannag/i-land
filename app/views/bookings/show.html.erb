@@ -1,1 +1,14 @@
-<h1>booking show</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>Your Booking</h1>
+    </div>
+    <div class="col-sm">
+      <%= @booking.island.name %>
+    </div>
+    <div class="col-sm">
+      <%= @booking.start_at %>
+      <%= @booking.end_at %>
+    </div>
+  </div>
+</div>
