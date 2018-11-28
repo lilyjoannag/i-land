@@ -1,22 +1,47 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-      <h1>Your Booking</h1>
-    </div>
-    <div class="col-sm">
-      <%= @booking.island.name %> en <%= @booking.island.address %>
-    </div>
-    <div class="col-sm">
-      <%= @booking.island.description %>
-    </div>
-    <div class="col-sm">
-      <%= @booking.island.number_of_guests %> people can stay
-    </div>
-    <div class="col-sm">
-      <%= @booking.island.price_per_night %> €/night
-    </div>
-    <div class="col-sm">
-      Booking from <%= @booking.start_at %> to <%= @booking.end_at %>
-    </div>
+    <h2 class="profile-title" align="center" >Your Booking</h2>
+      <div class="col-sm">
+        <div class="panel panel-default">
+          <div class="panel-heading">  <h4>Your villa</h4></div>
+           <div class="panel-body">
+            <div class="box box-info">
+              <div class="box-body">
+                <div class="col-sm">
+                  <div align="center">
+                            <div class="island-item" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= cloudinary_url("island_2") %>')">
+        </div>
+                  </div>
+                    <div class="clearfix"></div>
+                    <hr style="margin:5px 0 5px 0;">
+                    <div class="col-sm-5 col-xs-6 tital " >The Island:</div><div class="col-sm-7 col-xs-6 "><%= @booking.island.name %></div>
+                         <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+
+                    <div class="col-sm-5 col-xs-6 tital " >Location:</div><div class="col-sm-7"><%= @booking.island.address %></div>
+                      <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+
+                    <div class="col-sm-5 col-xs-6 tital " >Description:</div><div class="col-sm-7"><%= @booking.island.description %></div>
+                      <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+
+                    <div class="col-sm-5 col-xs-6 tital " >Capacity:</div><div class="col-sm-7"><%= @booking.island.number_of_guests %> people can stay</div>
+
+                     <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+
+                    <div class="col-sm-5 col-xs-6 tital " >Price:</div><div class="col-sm-7"><%= @booking.island.price_per_night %> €/night</div>
+
+                    <div class="col-sm-5 col-xs-6 tital " >Dates:</div><div class="col-sm-7">Booking from <%= @booking.start_at %> to <%= @booking.end_at %></div>
+
+                     <div class="clearfix"></div>
+                    <div class="bot-border"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
