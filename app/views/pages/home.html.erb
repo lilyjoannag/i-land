@@ -1,3 +1,4 @@
+<% content_for :navbar_id, "navbar_home" %>
 <div>
   <div class="typewriter">
     <h1>Welcome to your island</h1>
@@ -21,9 +22,13 @@
         <div class="island-item" style="background-image: url('<%= cloudinary_url("island_4") %>')">
         </div>
       </div>
+      <div id="btn">
+        <div class="text-center">
+          <a href="http://localhost:3000/islands" class="btn-medium">View all islands</a>
+        </div>
+      </div>
     </div>
   </div>
-
 <div class="container space-around">
   <div class="row">
     <div class="col-md-4">
@@ -67,6 +72,4 @@
       </div>
     </div>
   </div>
-
-
 </div>
