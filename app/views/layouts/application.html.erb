@@ -6,9 +6,10 @@
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%stylesheet_pack_tag 'application', media: 'all' %>
+
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick-theme.css"/>
 
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
@@ -17,14 +18,16 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick-theme.css"/>
      <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href="https://fonts.googleapis.com/css?family=Crete+Round|Merriweather+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
 
   </body>
 </html>
