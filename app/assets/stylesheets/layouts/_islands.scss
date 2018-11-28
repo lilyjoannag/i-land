@@ -7,6 +7,11 @@
 }
 
 
+.wrapper {
+   display: flex;
+ }
+
+
 //this is for the search css on the left
 
 @use postcss-color-function;
