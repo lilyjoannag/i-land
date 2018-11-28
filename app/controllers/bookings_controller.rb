@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.island = @island
     authorize @booking
     if @booking.save!
-      redirect_to user_bookings_path(current_user)
+      redirect_to user_booking_path(current_user, @booking)
     else
       redirect_to island_path(@island)
     end
