@@ -14,7 +14,7 @@
 
       <!-- Links when logged in -->
       <a class="navbar-island-item navbar-island-link" data-toggle="modal" data-target="#formModal">
-        Add a dream
+        Host a dream
       </a>
 
       <%= link_to "My reservations", "#", class: "navbar-island-item navbar-island-link" %>
@@ -76,7 +76,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+<div class="modal modal-center-island fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog width-400" role="document">
     <div class="modal-content">
       <div class="modal-header flex-center-between">
@@ -85,13 +85,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body island-modal-body">
         <div class="form-center">
           <%= simple_form_for(Island.new) do |f| %>
             <%= f.input :name, input_html: { placeholder: "Ila vida" } %>
             <%= f.input :address, input_html: { placeholder: "13 rue Paradise" } %>
             <%= f.submit "Add island", class: "btn btn-pink" %>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <% end %>
       </div>
     </div>

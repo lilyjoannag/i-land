@@ -116,7 +116,7 @@ div#navbar_home {
 
 
 #formModalLabel{
-  color: #686b76;
+  color: #2a3044;
   font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
@@ -126,17 +126,23 @@ div#navbar_home {
 
 
 .btn-pink {
-  color: #fff;
-  background-color: #ed8a8a;
+  color: white;
+  background-color: #193146;
   border-color: #ced4d8;
+  border-radius:50px;
+  transition: all 0.3s ease;
 }
 
 .btn-pink:hover {
-  background-color: lightgrey;
+  background: white;
+  color:#193146;
+
 }
+
 
 @media (min-width: 768px) {
   .modal-dialog.width-400 {
     width: 500px;
   }
 }
+
