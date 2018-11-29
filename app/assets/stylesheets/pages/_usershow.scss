@@ -1,12 +1,14 @@
 .user-islands-container {
   overflow: scroll;
   height: 80vh;
-  width: 90%;
+  width: 80%;
 }
 
 .overall-container {
   margin-bottom: 60px;
-  margin-top: 30px;
+  margin-top: 20px;
+  // height: 570px;
+  // width: 950px;
 }
 
 .user-islands-title {
@@ -22,8 +24,13 @@
 
 .user-islands-column {
   padding-top: 30px;
+  margin-left: 120px;
 }
 
 h3, p, {
   font-family: 'Niramit', regular;
+}
+
+.user-profile-column {
+  margin-right: 20px;
 }
