@@ -58,18 +58,14 @@
                           <%= image_tag("user-default.jpg", class:"owner_photo") %>
 
                         <!--  <div class="owner">
-                           <%#= booking.island.user.avatar %>
+                           <%#= booking.island.user.photo_user %>
 
                          </div> -->
                         <div class="island_name">
                           <%= booking.island.name %>
-                          <%= booking.status %>
                         </div>
                         <div class="d-flex">
-                          <div class="details col-6">
-                            <p><i class="fas fa-users"></i> <%=   %></p>
-                            <p><i class="fas fa-dollar-sign"></i> <%=   %></p>
-                          </div>
+
                           <div class="dates col-6">
                             <p> From <%= booking.start_at %></p>
                             <p> To <%= booking.end_at %></p>

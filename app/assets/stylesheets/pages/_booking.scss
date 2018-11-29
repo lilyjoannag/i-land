@@ -53,29 +53,31 @@
   text-align:right;
 }
 .accept {
-  color: green;
-  background-color: white;
+  color: white;
   border-color: #ced4d8;
   border-radius:50px;
   transition: all 0.3s ease;
+      width: 100px;
+      background:#0eb80e;
 }
 
 .accept:hover {
   background: white;
-  color:green;
+  color:#0eb80e;
 
 }
 
 .decline {
-  color: red;
-  background-color: white;
+  color: white;
   border-color: #ced4d8;
   border-radius:50px;
+  background:#d23434;
   transition: all 0.3s ease;
+      width: 100px;
 }
 
 .decline:hover {
   background: white;
-  color:red;
+  color:#d23434;
 
 }

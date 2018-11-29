@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     @booking.update(status: params[:status])
-    redirect_to user_bookings_path(user)
+    redirect_to user_bookings_path(current_user)
   end
   def destroy
     authorize @booking
