@@ -5,9 +5,11 @@ import { initMap } from '../components/map';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { carousel } from "../components/carousel.js";
+import { carouselIndex } from "../components/carousel-index.js";
+import { carouselShow } from "../components/carousel-show.js";
 import { initAutocomplete } from "../plugins/init_autocomplete";
-carousel();
+carouselIndex();
+carouselShow();
 initUpdateNavbarOnScroll();
 initMap();
 initAutocomplete();
