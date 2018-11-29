@@ -20,7 +20,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    edit?
+    true #edit?
   end
 
   def destroy

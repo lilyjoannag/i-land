@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @island = Island.find(params[:island_id])
     @booking.user = current_user
     @booking.island = @island
+    @booking.status = "pending"
     authorize @booking
     if @booking.save!
       redirect_to user_booking_path(current_user, @booking)
@@ -23,7 +24,8 @@ class BookingsController < ApplicationController
   end
   def update
     authorize @booking
-    @booking.update(params[:status])
+    @booking.update(status: params[:status])
+    redirect_to user_bookings_path(user)
   end
   def destroy
     authorize @booking

@@ -52,3 +52,30 @@
 .dates {
   text-align:right;
 }
+.accept {
+  color: green;
+  background-color: white;
+  border-color: #ced4d8;
+  border-radius:50px;
+  transition: all 0.3s ease;
+}
+
+.accept:hover {
+  background: white;
+  color:green;
+
+}
+
+.decline {
+  color: red;
+  background-color: white;
+  border-color: #ced4d8;
+  border-radius:50px;
+  transition: all 0.3s ease;
+}
+
+.decline:hover {
+  background: white;
+  color:red;
+
+}
