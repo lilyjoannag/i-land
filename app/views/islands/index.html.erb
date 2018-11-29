@@ -23,14 +23,19 @@
   <div class="content col-xs-10 col-xs-offset-1 ">
     <div class="title-layout">
       <h5>Discover a new paradise</h5>
+    <p>Book an island hosted by our certified hosts for your next trip</p>
     </div>
   <div class="content col-xs-9 ">
-    <div id="map" data-markers="<%= @markers.to_json %>">
-    </div>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
     <div class="p-layout">
     <h5>Popular islands</h5>
     </div>
-    <p>Book an island hosted by our certified hosts for your next trip</p>
     <div class="cards">
       <% if  @islands.count < 4 %>
           <div class="cards-without-carousel">
@@ -94,10 +99,3 @@
     </div>
   </div>
 </div>
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<!-- Gmaps JavaScript -->
-<%=  javascript_include_tag "//maps.google.com/maps/api/js?key=#{ENV['gmap_key']}"%>

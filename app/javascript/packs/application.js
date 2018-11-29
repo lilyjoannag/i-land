@@ -1,7 +1,7 @@
 import "bootstrap";
 import "slick-carousel";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-import { initMap } from '../components/map';
+//import { initMap } from '../components/map';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,5 +11,8 @@ import { initAutocomplete } from "../plugins/init_autocomplete";
 carouselIndex();
 carouselShow();
 initUpdateNavbarOnScroll();
-initMap();
+//initMap();
 initAutocomplete();
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+initMapbox();

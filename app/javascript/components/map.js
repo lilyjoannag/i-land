@@ -1,4 +1,3 @@
-
 const initMap = () => {
     // Create a map object and specify the DOM element for display.
     const mapElement = document.getElementById("map")
