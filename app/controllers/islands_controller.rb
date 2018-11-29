@@ -24,11 +24,25 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find(params[:id])
+    @markers = [@island].map do |island|
+         {
+           lng: island.longitude,
+           lat: island.latitude,
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+         }
+    end
     authorize @island
   end
 
   def edit
     @island = Island.find(params[:id])
+    @markers = [@island].map do |island|
+         {
+           lng: island.longitude,
+           lat: island.latitude,
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+         }
+    end
     authorize @island
   end
 
