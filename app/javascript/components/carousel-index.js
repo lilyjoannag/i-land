@@ -1,7 +1,7 @@
 
 
 
-const carousel = () => {
+const carouselIndex = () => {
   $(document).ready(function(){
     $('.carousel-index').slick({
       infinite: true,
@@ -14,4 +14,4 @@ const carousel = () => {
   });
 };
 
-export {carousel}
+export {carouselIndex}
