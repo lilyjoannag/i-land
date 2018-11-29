@@ -8,15 +8,15 @@
 puts "Users are being destroyed..."
 User.destroy_all
 puts "Users are destroyed!"
+puts "Islands are being destroyed..."
+Island.destroy_all
+puts "Islands are destroyed!"
 
 lily = User.create!(email: "lilyjo@gmail.com", password: "123456")
 anna = User.create!(email: "annah@gmail.com", password: "123456")
 nico = User.create!(email: "nichod@gmail.com", password: "123456")
 helo = User.create!(email: "helog@gmail.com", password: "123456")
 
-puts "Islands are being destroyed..."
-Island.destroy_all
-puts "Islands are destroyed!"
 
 Island.create!(name: "Epsilon",price_per_night: 10000, number_of_guests: 15, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: lily, address: "martinique")
 Island.create!(name: "Saint-Pierre",price_per_night: 40000, number_of_guests: 6, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: anna, address: "bali")
