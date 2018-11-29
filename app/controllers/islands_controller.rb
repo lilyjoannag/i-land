@@ -87,7 +87,7 @@ class IslandsController < ApplicationController
     # @island.description = island_params[:description]
     # @island.photos = island_params[:photos]
     # @island.save
-    redirect_to islands_path
+    redirect_to island_path(@island)
   end
 
   def destroy
