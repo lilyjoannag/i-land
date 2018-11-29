@@ -1,14 +1,16 @@
-<div class="grid-container">
-  <%= simple_form_for(@island) do |f| %>
-    <div class="show-card photo-element">
-      <h3>Add Photos of Your Island</h3>
-      <%= f.input :photo_1 %>
-      <%= f.input :photo_1_cache, as: :hidden %>
-      <%= f.input :photo_2 %>
-      <%= f.input :photo_2_cache, as: :hidden %>
-      <%= f.input :photo_3 %>
-      <%= f.input :photo_3_cache, as: :hidden %>
-    </div>
+
+<%= simple_form_for(@island) do |f| %>
+  <div class="photo-edit">
+    <h3>Add Photos of Your Island</h3>
+    <%= f.input :photo_1 %>
+    <%= f.input :photo_1_cache, as: :hidden %>
+    <%= f.input :photo_2 %>
+    <%= f.input :photo_2_cache, as: :hidden %>
+    <%= f.input :photo_3 %>
+    <%= f.input :photo_3_cache, as: :hidden %>
+  </div>
+<div class="wrapper-show">
+  <div class="grid">
     <div class="show-card description-element">
       <h3><%= f.input :name, placeholder:"Enter your Island Name" %></h3>
       <h3><%= f.input :description, placeholder:"Enter information about your island, its features, layout and atmosphere"%></h3>
@@ -16,20 +18,21 @@
         <h3>About Yourself</h3>
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
         <p>User Full Name Here</p>
-      </div>
+     </div>
     </div>
       <div class="show-card dates-element">
-        <h3>Dates</h3>
+        <%  if current_user == @island.user %>
+          <%= f.submit "Update Your Island", class: "btn btn-primary update-island-button" %>
+          <%= link_to "Delete Your Island ", island_path(@island),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete your island?" },
+            class: "btn btn-success delete-button" %>
+        <% end %>
       </div>
       <div class="show-card map-element">
         <h3><%= f.input :address, placeholder:"Enter your latitude and longitude" %></h3>
       </div>
-      <%  if current_user == @island.user %>
-      <%= f.submit "Update Your Island", class: "btn btn-primary update-island-button" %>
-      <%= link_to "Delete Your Island ", island_path(@island),
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete your island?" },
-        class: "btn btn-success delete-button" %>
-    <% end %>
-  <% end %>
-</div>
+    </div>
+  </div>
+<% end %>
+ 

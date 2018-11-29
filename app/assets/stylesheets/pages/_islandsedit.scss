@@ -1,14 +1,14 @@
-.edit_island {
-  display: grid;
-  grid-template-columns: 900px 1fr;
-  grid-template-rows:  25% 25% 25% 25%;
-  height: 200vh;
-  background-image: cover;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
-  border: 1px solid grey;
-  font-family: 'Work Sans', sans-serif;
-}
+// .edit_island {
+//   display: grid;
+//   grid-template-columns: 900px 1fr;
+//   grid-template-rows:  25% 25% 25% 25%;
+//   height: 200vh;
+//   background-image: cover;
+//   grid-column-gap: 0;
+//   grid-row-gap: 0;
+//   border: 1px solid grey;
+//   font-family: 'Work Sans', sans-serif;
+// }
 //   grid-row: 1 / span 3;
 //   grid-column: 1 / span 2;
 // }
@@ -20,11 +20,18 @@
   text-align: center;
 }
 
+.photo-edit {
+  width: 100%;
+  height: 500px;
+}
+#island_dates {
+  display: flex;
+  justify-content: center;
 
-
+}
 #island_description {
   height: 230px;
-  width: 400px;
+  width: 300px;
   margin: 10px;
 
 }
