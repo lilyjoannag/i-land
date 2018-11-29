@@ -13,7 +13,7 @@ class IslandsController < ApplicationController
 
   def create
     @island = Island.new(island_params)
-    authorize @islandF
+    authorize @island
     @island.user = current_user
     @island.save!
     redirect_to edit_island_path(@island)
