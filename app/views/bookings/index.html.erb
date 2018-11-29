@@ -1,33 +1,104 @@
-<div class="container bookings">
-  <h1>My bookings</h1>
-    <div class="row">
-      <% @bookings.each do |booking| %>
-        <div class="col-md-4">
-          <div class="card">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My bookings</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Booking requests</a></li>
+  </ul>
 
-              <%#= booking.island.photo_1 %>
-              <%= image_tag("Island_5.jpg", class:"island_photo") %>
-              <%= image_tag("user-default.jpg", class:"owner_photo") %>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
 
-            <!--  <div class="owner">
-               <%#= booking.island.user.avatar %>
+      <div class="container bookings">
+        <h1>My bookings</h1>
+          <div class="row">
+            <% current_user.bookings.each do |booking| %>
+              <div class="col-md-4">
+                <div class="card">
 
-             </div> -->
-            <div class="island_name">
-              <%= booking.island.name %>
-            </div>
-            <div class="d-flex">
-              <div class="details col-6">
-                <p><i class="fas fa-users"></i> <%=  booking.island.number_of_guests %></p>
-                <p><i class="fas fa-dollar-sign"></i> <%=  booking.island.price_per_night %></p>
+                    <%#= booking.island.photo_1 %>
+                    <%= image_tag("Island_5.jpg", class:"island_photo") %>
+                    <%= image_tag("user-default.jpg", class:"owner_photo") %>
+
+                  <!--  <div class="owner">
+                     <%#= booking.island.user.avatar %>
+
+                   </div> -->
+                  <div class="island_name">
+                    <%= booking.island.name %>
+                    <%= booking.status %>
+                  </div>
+                  <div class="d-flex">
+                    <div class="details col-6">
+                      <p><i class="fas fa-users"></i> <%=  booking.island.number_of_guests %></p>
+                      <p><i class="fas fa-dollar-sign"></i> <%=  booking.island.price_per_night %></p>
+                    </div>
+                    <div class="dates col-6">
+                      <p> From <%= booking.start_at %></p>
+                      <p> To <%= booking.end_at %></p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="dates col-6">
-                <p> From <%= booking.start_at %></p>
-                <p> To <%= booking.end_at %></p>
-              </div>
-            </div>
+            <% end %>
           </div>
-        </div>
-      <% end %>
+      </div>
     </div>
-</div>
+
+
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div class="container bookings">
+              <h1>Booking requests</h1>
+                <div class="row">
+                  <% current_user.bookings_as_owner.each do |booking| %>
+                    <div class="col-md-4">
+                      <div class="card">
+
+                          <%#= booking.island.photo_1 %>
+                          <%= image_tag("Island_5.jpg", class:"island_photo") %>
+                          <%= image_tag("user-default.jpg", class:"owner_photo") %>
+
+                        <!--  <div class="owner">
+                           <%#= booking.island.user.photo_user %>
+
+                         </div> -->
+                        <div class="island_name">
+                          <%= booking.island.name %>
+                        </div>
+                        <div class="d-flex">
+
+                          <div class="dates col-6">
+                            <p> From <%= booking.start_at %></p>
+                            <p> To <%= booking.end_at %></p>
+                          </div>
+                          <% if booking.status == 'pending' %>
+                          <div class="button_status">
+                            <div class="accept">
+                              <%= simple_form_for(booking) do |f| %>
+                                <%= f.input :status, as: :hidden, input_html: { value: "accepted"} %>
+                                <%= f.submit "Accept", class: "accept" %>
+                                <% end %>
+                            </div>
+                            <div class="decline">
+                              <%= simple_form_for(booking) do |f| %>
+                                <%= f.input :status, as: :hidden, input_html: { value: "declined"} %>
+                                <%= f.submit "Decline", class: "decline" %>
+                                <% end %>
+                            </div>
+                          </div>
+                            <% else %>
+                              <%= booking.status %>
+                            <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+            </div>
+    </div>
+  </div>
+
+
+
+
+
+
