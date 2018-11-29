@@ -74,13 +74,13 @@
                           <div class="button_status">
                             <div class="accept">
                               <%= simple_form_for(booking) do |f| %>
-                                <%= f.input :status, as: :hidden %>
+                                <%= f.input :status, as: :hidden, input_html: { value: "accepted"} %>
                                 <%= f.submit "Accept", class: "accept" %>
                                 <% end %>
                             </div>
                             <div class="decline">
                               <%= simple_form_for(booking) do |f| %>
-                                <%= f.input :status, as: :hidden %>
+                                <%= f.input :status, as: :hidden, input_html: { value: "declined"} %>
                                 <%= f.submit "Decline", class: "decline" %>
                                 <% end %>
                             </div>

@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
   end
   def update
     authorize @booking
-    @booking.update(status: params[:status])
+    @booking.update(status: params[:booking][:status])
     redirect_to user_bookings_path(current_user)
   end
   def destroy
@@ -33,11 +33,11 @@ class BookingsController < ApplicationController
     redirect_to island_bookings_path(@island)
   end
 
+
+  private
   def booking_params
     params.require(:booking).permit(:island_id, :user_id, :start_at, :end_at)
   end
-
-  private
 
   def set_booking
     @booking = Booking.find(params[:id])
