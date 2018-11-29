@@ -1,4 +1,18 @@
-<%= @current_user.email %>
-<%= @current_user.first_name %>
-<%= @current_user.last_name %>
-<%= link_to "Edit", edit_user_path(current_user), class: "btn btn-primary" %>
+<div class="container space-around">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="text-center">
+        <%= cl_image_tag(current_user.photo_user, class:"avatar-bordered") %>
+      </div>
+      <div class="space-inside">
+      <h5>
+        <strong><%= current_user.first_name %> <%= @current_user.last_name %></strong>
+      </h5>
+      <p><%= current_user.email %></p>
+      <%= link_to "Edit", edit_user_path(current_user), class: "btn btn-primary" %>
+      </div>
+    <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>

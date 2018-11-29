@@ -4,4 +4,5 @@ class User < ApplicationRecord
   has_many :islands
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :photo_user, PhotoUploader
 end
