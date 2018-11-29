@@ -36,19 +36,30 @@
         </div>
       </div>
       <div class="show-card owner-element">
-        <h3>Owner</h3>
+        <% if current_user == @island.user %>
+          <button class="edit-island-button btn-pink"><%= link_to "Edit Your Island", edit_island_path(@island) %></button>
+          <% else %>
+            <h3>Owner</h3>
+            <p>Island owner information</p>
+        <% end %>
       </div>
+
 
       <p><%= @island.description %></p>
 
     </div>
     <div class="show-card dates-element">
-      <h3>Choose your dates</h3>
-      <%  @booking = Booking.new%>
-      <%= simple_form_for [@island, @booking] do |f| %>
-        <%= f.input :start_at %>
-        <%= f.input :end_at %>
-        <%= f.submit class: "btn btn-primary" %>
+      <% if current_user == @island.user %>
+        <h3>Upcoming Bookings</h3>
+        <p> @user.booking <p>
+      <% else %>
+        <h3>Choose your dates</h3>
+        <%  @booking = Booking.new%>
+        <%= simple_form_for [@island, @booking] do |f| %>
+          <%= f.input :start_at %>
+          <%= f.input :end_at %>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
       <% end %>
     </div>
     <div class="show-card map-element">
@@ -57,16 +68,5 @@
       </div>
     </div>
   </div>
-<div class="edit-button">
-  <% if current_user == @island.user %>
-    <%= link_to "Edit Your Island", edit_island_path(@island) %>
-  <% end %>
 </div>
-</div>
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<!-- Gmaps JavaScript -->
-<%=  javascript_include_tag "//maps.google.com/maps/api/js?key=#{ENV['gmap_key']}"%>
+
