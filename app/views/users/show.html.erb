@@ -6,7 +6,12 @@
     <div class="col-md-4 col-md-offset-1 user-profile-column">
       <div class="user-profile-container">
         <div class="avatar-user-show text-center">
-          <%= cl_image_tag(current_user.photo_user, class:"avatar-bordered") %>
+          <% if current_user.photo_user.present? %>
+            <% avatar =  current_user.photo_user%>
+            <% else %>
+            <% avatar = image_path("user-default.jpg") %>
+          <% end %>
+          <%= cl_image_tag(avatar, class:"avatar-bordered") %>
         </div>
         <div class="details-user-show space-inside">
         <h5>
