@@ -1,6 +1,14 @@
-.card {
+.card-index {
   height: 300px;
+  width: 300px;
   position: relative;
+  background: #DDD;
+}
+
+.cards-without-carousel {
+  display: flex;
+  justify-content: space-around;
+  width: 100%
 }
 
 .card-body {
