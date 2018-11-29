@@ -20,9 +20,14 @@
     <% end %>
 
   </div>
+
   <div class="content col-xs-9 ">
+    <h5>Discover a new paradise</h5>
+
     <div id="map" data-markers="<%= @markers.to_json %>">
     </div>
+    <h5>Popular islands</h5>
+    <p>Book an island hosted by our certified hosts for your next trip</p>
     <div class="cards">
       <% if  @islands.count < 4 %>
           <div class="cards-without-carousel">

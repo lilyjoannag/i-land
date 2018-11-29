@@ -1,18 +1,54 @@
-<div class="container space-around">
+<div class="container space-around overall-container">
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <div class="text-center">
-        <%= cl_image_tag(current_user.photo_user, class:"avatar-bordered") %>
+
+   <!--  <div class="col-md-4"></div> -->
+
+    <div class="col-md-4 col-md-offset-2">
+      <div class="user-profile-container">
+        <div class="avatar-user-show text-center">
+          <%= cl_image_tag(current_user.photo_user, class:"avatar-bordered") %>
+        </div>
+        <div class="details-user-show space-inside">
+        <h5>
+          <h3><%= current_user.first_name %> <%= @current_user.last_name %></h3>
+        </h5>
+        <p><%= current_user.email %></p>
+        <%= link_to "Edit", edit_user_path(current_user), class: "btn btn-primary" %>
+        </div>
       </div>
-      <div class="space-inside">
-      <h5>
-        <strong><%= current_user.first_name %> <%= @current_user.last_name %></strong>
-      </h5>
-      <p><%= current_user.email %></p>
-      <%= link_to "Edit", edit_user_path(current_user), class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-4 user-islands-column">
+      <div class="user-islands-title">
+        <h3>My Islands</h3>
       </div>
-    <div class="col-md-4"></div>
+      <div class="user-islands-container">
+        <% current_user.islands.each do |island|  %>
+          <div class="card">
+
+              <%#= booking.island.photo_1 %>
+              <%= image_tag("Island_5.jpg", class:"island_photo") %>
+              <%= image_tag("user-default.jpg", class:"owner_photo") %>
+
+            <!--  <div class="owner">
+               <%#= booking.island.user.avatar %>
+
+             </div> -->
+            <div class="island_name">
+              <%= island.name %>
+            </div>
+            <div class="d-flex">
+              <div class="details col-6">
+                <p><i class="fas fa-users"></i> <%= island.number_of_guests %></p>
+                <p><i class="fas fa-dollar-sign"></i> <%= island.price_per_night %></p>
+              </div>
+              <div class="dates col-6">
+                <p>To fill</p>
+                <p>To fill</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
