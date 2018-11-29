@@ -21,7 +21,9 @@
 .carousel-show {
   display: flex !important;
   align-items: center;
-
+  .slick-current {
+    margin: 0;
+  }
 
 }
 
@@ -37,7 +39,5 @@
   margin: 0 !important;
 }
 
-.slick-current {
-  margin: 0;
-}
+
 
