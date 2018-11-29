@@ -13,7 +13,7 @@ class IslandsController < ApplicationController
 
   def create
     @island = Island.new(island_params)
-    authorize @island
+    authorize @islandF
     @island.user = current_user
     @island.save!
     redirect_to edit_island_path(@island)
@@ -43,6 +43,12 @@ class IslandsController < ApplicationController
     # @island.photos = island_params[:photos]
     # @island.save
     redirect_to island_path(@island)
+  end
+
+  def destroy
+    @island = Island.find(params[:id])
+    authorize @island
+    @island.destroy
   end
 
   private

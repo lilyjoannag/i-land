@@ -18,16 +18,21 @@
         <h3>About Yourself</h3>
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
         <p>User Full Name Here</p>
-      </div>
+     </div>
     </div>
       <div class="show-card dates-element">
-        <%= f.submit "Update Island", class: "btn btn-primary update-island-button" %>
+        <%  if current_user == @island.user %>
+          <%= f.submit "Update Your Island", class: "btn btn-primary update-island-button" %>
+          <%= link_to "Delete Your Island ", island_path(@island),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete your island?" },
+            class: "btn btn-success delete-button" %>
+        <% end %>
       </div>
       <div class="show-card map-element">
         <h3><%= f.input :address, placeholder:"Enter your latitude and longitude" %></h3>
       </div>
+    </div>
   </div>
-
-    <% end %>
-  </div>
-</div>
+<% end %>
+ 
