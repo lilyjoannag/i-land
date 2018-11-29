@@ -20,52 +20,27 @@
     <% end %>
 
   </div>
-  <div class="content col-xs-10 col-xs-offset-1 ">
-    <div class="title-layout">
-      <h5>Discover a new paradise</h5>
-    </div>
-  <div class="content col-xs-9 ">
-    <div id="map" data-markers="<%= @markers.to_json %>">
-    </div>
-    <div class="p-layout">
-    <h5>Popular islands</h5>
-    </div>
-    <p>Book an island hosted by our certified hosts for your next trip</p>
-    <div class="cards">
-      <% if  @islands.count < 4 %>
-          <div class="cards-without-carousel">
-            <% @islands.each do |island| %>
-              <div class="card-index">
-                <div class="card-body">
-                  <h2><%=  island.name%></h2>
-                  <div class="description-hidden">
-                    <p><%=  island.description%></p>
-                    <%= link_to "", island_path(island), class: "card-link" %>
-                  </div>
 
-                </div>
-                <div class="card-footer">
-                  <div >
-                    <p>20</p>
-                    <i class="fas fa-users"></i>
-                  </div>
-                  <div>
-                    <p>50000</p>
-                    <i class="fas fa-dollar-sign"></i>
-                  </div>
-
-                </div>
-
-
-              </div>
-            <% end %>
-          </div>
-
-      <% else %>
-        <div class="carousel-index">
+<div class="content col-xs-9 ">
+  <div class="title-layout">
+    <h2>Discover a new paradise</h2>
+  </div>
+  <div id="map" data-markers="<%= @markers.to_json %>">
+  </div>
+  <div class="p-layout">
+  <h3>Pick your island</h3>
+  </div>
+  <div class="cards">
+    <% if  @islands.count < 4 %>
+        <div class="cards-without-carousel">
           <% @islands.each do |island| %>
-            <div class="carousel-index-card-item card-index">
-              <div class="card-body">
+            <div class="card-index">
+              <% if island.default_photo.present? %>
+                <%  path = island.default_photo %>
+              <% else %>
+                <%  path = "http://lemag.corsair.fr/wp-content/uploads/2018/01/martinique-2487148_1280-660x400.jpg"%>
+              <% end %>
+              <div class="card-body" style=<%="background:url(#{path})" %>>
                 <h2><%=  island.name%></h2>
                 <div class="description-hidden">
                   <p><%=  island.description%></p>
@@ -89,9 +64,42 @@
             </div>
           <% end %>
         </div>
-       <% end %>
 
-    </div>
+    <% else %>
+      <div class="carousel-index">
+        <% @islands.each do |island| %>
+          <% if island.default_photo.present? %>
+            <% path = island.default_photo%>
+          <% else %>
+            <%  path = "http://lemag.corsair.fr/wp-content/uploads/2018/01/martinique-2487148_1280-660x400.jpg"%>
+          <% end %>
+          <div class="carousel-index-card-item card-index">
+            <div class="card-body" style=<%="background:url(#{path})" %>>
+              <h2><%=  island.name%></h2>
+              <div class="description-hidden">
+                <p><%=  island.description%></p>
+                <%= link_to "", island_path(island), class: "card-link" %>
+              </div>
+
+            </div>
+            <div class="card-footer">
+              <div >
+                <p>20</p>
+                <i class="fas fa-users"></i>
+              </div>
+              <div>
+                <p>50000</p>
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+
+            </div>
+
+
+          </div>
+        <% end %>
+      </div>
+     <% end %>
+
   </div>
 </div>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
