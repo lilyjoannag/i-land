@@ -14,7 +14,9 @@
 .card-body {
   height: 250px;
   position: relative;
-  background: #EEE;
+  background-size: cover !important;
+  background-position: center  !important;
+
   h2 {
     color: white;
     position: absolute;
