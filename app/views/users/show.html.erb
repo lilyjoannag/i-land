@@ -1,18 +1,28 @@
 <div class="container space-around">
   <div class="row">
-    <div class="col-md-4"></div>
+
+   <!--  <div class="col-md-4"></div> -->
+
     <div class="col-md-4">
-      <div class="text-center">
-        <%= cl_image_tag(current_user.photo_user, class:"avatar-bordered") %>
+      <div class="user-profile-container">
+        <div class="avatar-user-show text-center">
+          <%= cl_image_tag(current_user.photo_user, class:"avatar-bordered") %>
+        </div>
+        <div class="details-user-show space-inside">
+        <h5>
+          <strong><%= current_user.first_name %> <%= @current_user.last_name %></strong>
+        </h5>
+        <p><%= current_user.email %></p>
+        <%= link_to "Edit", edit_user_path(current_user), class: "btn btn-primary" %>
+        </div>
       </div>
-      <div class="space-inside">
-      <h5>
-        <strong><%= current_user.first_name %> <%= @current_user.last_name %></strong>
-      </h5>
-      <p><%= current_user.email %></p>
-      <%= link_to "Edit", edit_user_path(current_user), class: "btn btn-primary" %>
-      </div>
-    <div class="col-md-4"></div>
     </div>
+    <div class="col-md-4">
+      <div class="user-islands-container">
+
+      </div>
+    </div>
+
+
   </div>
 </div>
