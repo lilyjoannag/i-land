@@ -9,8 +9,11 @@
 
   </div>
   <div class="content col-xs-10 col-xs-offset-1 ">
+    <h5>Discover a new paradise</h5>
     <div id="map" data-markers="<%= @markers.to_json %>">
     </div>
+    <h5>Popular islands</h5>
+    <p>Book an island hosted by our certified hosts for your next trip</p>
     <div class="cards">
       <div class="carousel-index">
         <% @islands.each do |island| %>
