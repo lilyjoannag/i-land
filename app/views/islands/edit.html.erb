@@ -14,6 +14,16 @@
     <div class="show-card description-element">
       <h3><%= f.input :name, placeholder:"Enter your Island Name" %></h3>
       <h3><%= f.input :description, placeholder:"Enter information about your island, its features, layout and atmosphere"%></h3>
+      <div class="show-card infos-element-edit">
+        <div >
+          <p><%= f.input :number_of_guests , placeholder:"How many guests ?", label: false, width: 200%></p>
+
+        </div>
+        <div>
+          <p><%= f.input :price_per_night , placeholder:"Price per night", label: false, width: 200%></p>
+
+        </div>
+      </div>
       <div class="show-card owner-element">
         <h3>About Yourself</h3>
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
@@ -21,7 +31,7 @@
       </div>
     </div>
       <div class="show-card dates-element">
-        <%= f.submit "Update Island", class: "btn btn-primary update-island-button" %>
+        <%= f.submit "Update Island", class: "btn btn-pink btn-orange" %>
       </div>
       <div class="show-card map-element">
         <h3><%= f.input :address, placeholder:"Enter your latitude and longitude" %></h3>

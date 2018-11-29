@@ -35,9 +35,26 @@
   margin: 10px;
 
 }
+.infos-element-edit {
+  height: 25%;
+  width: 300px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  div {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 #island_name {
-  width: 430px;
+  width: 300px;
 }
 
 .owner-name {
@@ -55,12 +72,9 @@
   width: 430px;
 }
 
-.update-island-button {
-  height: 40px;
-  width: 200px;
-  justify-self: center;
-  text-self: center;
-  grid-column: 1 / 2;
+.btn-orange {
+  margin-top: 30px;
+  background: #ff7657;
 }
 
 
