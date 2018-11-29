@@ -1,13 +1,44 @@
 class IslandsController < ApplicationController
   def index
-    @islands_pundit = policy_scope(Island)
-    @islands = @islands_pundit.where.not(latitude: nil, longitude: nil)
-    @markers = @islands.map do |island|
-         {
-           lng: island.longitude,
-           lat: island.latitude,
-           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
-         }
+
+    if params[:query].present? || params[:query_area].present?
+      if params[:query][:distance].present? && params[:query_area].present?
+        @islands = policy_scope(Island.near(params[:query_area], params[:query][:distance]))
+      elsif params[:query_area].present?
+        @islands = policy_scope(Island.near(params[:query_area], 100))
+      else
+        @islands = policy_scope(Island)
+      end
+      min_price = params[:query][:min_price].present? ? params[:query][:min_price].to_i : 0
+      max_price = params[:query][:max_price].present? ? params[:query][:max_price].to_i : 1000000
+      @islands = @islands.select do |island|
+        island.price_per_night > min_price && island.price_per_night < max_price
+      end
+
+      if params[:query][:guest].present?
+        number_of_guests_query = params[:query][:guest].to_i
+        @islands = @islands.select do |island|
+          island.number_of_guests > number_of_guests_query - 5 && island.number_of_guests < number_of_guests_query + 5
+        end
+
+      end
+      @markers = @islands.map do |island|
+           {
+             lng: island.longitude,
+             lat: island.latitude,
+          }
+      end
+    else
+      @islands_pundit = policy_scope(Island)
+      @islands = @islands_pundit.where.not(latitude: nil, longitude: nil)
+      @markers = @islands.map do |island|
+           {
+             lng: island.longitude,
+             lat: island.latitude,
+
+             }
+      end
+
     end
   end
 
@@ -24,11 +55,25 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find(params[:id])
+    @markers = [@island].map do |island|
+         {
+           lng: island.longitude,
+           lat: island.latitude,
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+         }
+    end
     authorize @island
   end
 
   def edit
     @island = Island.find(params[:id])
+    @markers = [@island].map do |island|
+         {
+           lng: island.longitude,
+           lat: island.latitude,
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+         }
+    end
     authorize @island
   end
 
@@ -42,7 +87,7 @@ class IslandsController < ApplicationController
     # @island.description = island_params[:description]
     # @island.photos = island_params[:photos]
     # @island.save
-    redirect_to island_path(@island)
+    redirect_to islands_path
   end
 
   def destroy
