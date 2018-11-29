@@ -31,8 +31,16 @@
       </div>
       <div class="show-card map-element">
         <h3><%= f.input :address, placeholder:"Enter your latitude and longitude" %></h3>
+        <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
       </div>
     </div>
   </div>
 <% end %>
- 
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<!-- Gmaps JavaScript -->
+<%=  javascript_include_tag "//maps.google.com/maps/api/js?key=#{ENV['gmap_key']}"%>
