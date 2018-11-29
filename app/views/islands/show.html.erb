@@ -67,6 +67,9 @@
       <h3>Map</h3>
     </div>
   </div>
+  <% if policy(Island).edit? %>
+    <% link_to "Edit Your Island", edit_island_path(@island) %>
+  <% end %>
 </div>
 
 
