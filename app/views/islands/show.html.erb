@@ -43,7 +43,7 @@
           <button class="edit-island-button btn-pink"><%= link_to "Edit Your Island", edit_island_path(@island) %></button>
           <% else %>
             <h3>Owner</h3>
-            <p>Island owner information</p>
+            <%= @island.user %>
         <% end %>
       </div>
 
