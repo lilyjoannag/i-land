@@ -1,0 +1,54 @@
+.bookings{
+  text-align:center;
+  h1{
+    font-size:30px;
+     padding-bottom:30px;
+     color:#575753;
+  }
+
+}
+
+  .card {
+  text-align:center;
+  width:300px;
+  height:450px;
+  background-color:#e6e6e666;
+  margin:10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.island_name{
+  font-size:24px;
+}
+
+.island_photo {
+  width:300px;
+  height:250px;
+  opacity:0.9;
+}
+  .owner_photo {
+  margin:auto;
+  transform: translateY(-23px);
+  border-radius:50px;
+  height:50px;
+  width:50px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.details {
+  text-align:left;
+}
+.dates {
+  text-align:right;
+}
