@@ -23,6 +23,7 @@
 .photo-edit {
   width: 100%;
   height: 500px;
+  padding: 30px;
 }
 #island_dates {
   display: flex;
@@ -55,20 +56,46 @@
   width: 430px;
 }
 
-.update-island-button {
+
+
+
+.btn-red {
   height: 40px;
   width: 200px;
-  justify-self: center;
-  text-self: center;
-  grid-column: 1 / 2;
+  color: #ea5455;
+  background-color: white;
+  border-color: #ea5455;
+  border-radius:50px;
+  transition: all 0.3s ease;
 }
 
 .delete-button {
+  margin-top: 15px;
+}
+
+.btn-red:hover {
+  background: #ea5455;
+  color:white;
+
+}
+.btn-blue {
+  color: white;
+  background-color: #152b42;
+  border-color: white;
+  border-radius:50px;
+  transition: all 0.3s ease;
   height: 40px;
   width: 200px;
-  justify-self: center;
-  text-self: center;
-  margin: 15px;
 }
+
+.btn-blue:hover {
+  color: white;
+  width: 220px;
+  height: 45px;
+
+}
+
+
+
 
 
