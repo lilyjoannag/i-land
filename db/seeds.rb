@@ -24,7 +24,8 @@ Isleofvenus = Island.create!(name: "Isle of Venus",price_per_night: 30000, numbe
 Garaisland = Island.create!(name: "Gara Island",price_per_night: 20000, number_of_guests: 20, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: helo, address: "Cuba", default_photo: "http://media.tdc.travel/tdc_media/tmp/new/1516051707.498.cuba-04.jpg")
 Saintbarth = Island.create!(name: "Saint-Barth",price_per_night: 90000, number_of_guests: 40, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: helo, address: "Antilles", default_photo: "https://www.gladdenprivateisland.com/wp-content/uploads/2018/01/20171012kvpbz00_gladden-spit-caye-1134.jpg")
 Mnembaisland = Island.create!(name: "Mnemba Island",price_per_night: 420000, number_of_guests: 5, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: helo, address: "Zanzibar", default_photo: "https://www.privateislandsonline.com/uploads/resize/_2317_5be5ddd4e1545.jpg-1920-1480.jpg")
-Booking.create!(island: epsilon, user: lily, start_at: "2018-10-23", end_at: "2018-12-31")
+
+Booking.create!(island: Epsilon, user: lily, start_at: "2018-10-23", end_at: "2018-12-31")
 Booking.create!(island: Saintpierre, user: anna, start_at: "2018-9-23", end_at: "2018-12-31")
 Booking.create!(island: Isleofvenus, user: nico, start_at: "2018-8-23", end_at: "2018-12-31")
 Booking.create!(island: Saintbarth, user: helo, start_at: "2018-12-23", end_at: "2018-12-31")
