@@ -78,7 +78,7 @@
         <%  @booking = Booking.new%>
         <div class="calendar-container">
           <div class="calendar-form-wrapper">
-            <%= simple_form_for @booking url: island_bookings_path(@island)  do |f| %>
+            <%= simple_form_for @booking, url: island_bookings_path(@island)  do |f| %>
 
               <%= f.input :start_at, input_html: { id: "range_start" }, class: "start-date-text" %>
               <%= f.input :end_at, input_html: { id: "range_end" }, style: "width: 200px;" %>
