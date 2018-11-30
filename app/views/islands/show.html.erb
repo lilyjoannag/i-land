@@ -66,11 +66,15 @@
       <% else %>
         <h3>Choose your dates</h3>
         <%  @booking = Booking.new%>
-        <%= simple_form_for [@island, @booking] do |f| %>
-          <%= f.input :start_at %>
-          <%= f.input :end_at %>
-          <%= f.submit class: "btn btn-primary" %>
-        <% end %>
+        <div class="calendar-container">
+          <div class="calendar-form-wrapper">
+            <%= simple_form_for :search, method: "get" do |f| %>
+              <%= f.input :starts_at, input_html: { id: "range_start" }, class: "start-date-text" %>
+              <%= f.input :ends_at, input_html: { id: "range_end" }, style: "width: 200px;" %>
+              <%= f.button :submit, "Go", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
     <div class="show-card map-element">
