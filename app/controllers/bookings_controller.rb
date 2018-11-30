@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
       @island = Island.find(params[:island_id])
       @booking.user = current_user
       @booking.island = @island
+      @booking.total_price = (@booking.end_at - @booking.start_at + 1) * @booking.price_per_night
       @booking.status = "pending"
       authorize @booking
       if @booking.save!
