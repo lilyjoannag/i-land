@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <a class="navbar-island-item navbar-island-button " data-toggle="modal" data-target="#formModal">
+      <a class="navbar-island-item btn-white " data-toggle="modal" data-target="#formModal">
         Host a dream
       </a>
 
@@ -98,7 +98,7 @@
           <%= simple_form_for(Island.new) do |f| %>
             <%= f.input :name, input_html: { placeholder: "Ila vida" } %>
             <%= f.input :address, input_html: { placeholder: "13 rue Paradise" } %>
-            <%= f.submit "Add island", class: "btn btn-pink" %>
+            <%= f.submit "Add island", class: "btn btn-blue" %>
           <% end %>
       </div>
     </div>

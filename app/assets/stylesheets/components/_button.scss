@@ -61,3 +61,21 @@
 .btn-filter {
   margin: 20px auto;
 }
+
+.btn-white {
+  color: #152b42;
+  background-color: white;
+  border-color: #152b42;
+  border-radius:50px;
+  transition: all 0.3s ease;
+  height: 40px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+    color: #152b42;
+  }
+}
