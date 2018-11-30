@@ -1,6 +1,6 @@
 <% if  !@island.photo_1.present? && !@island.photo_3.present? && !@island.photo_3.present?%>
-  <div class="photo-placeholder">
-    <h1>Please add photos</h1>
+  <div class="photo-placeholder" >
+    <%= cl_image_tag @island.default_photo, width: 2000, height: 500, crop: :fill %>
   </div>
 <% end %>
 <div class="carousel-show">
@@ -75,7 +75,8 @@
       <% end %>
     </div>
     <div class="show-card map-element">
-      <h3>Map</h3>
+      <h3><em>Address : <%= @island.address.capitalize %></em></h3>
+
     <div
       id="map"
       style="width: 100%;
