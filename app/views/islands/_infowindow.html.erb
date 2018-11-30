@@ -1,1 +1,21 @@
-<%= island.name %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" colspan="2"><h5 class="text-center"><%= island.name %></h5></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Address</th>
+      <td><%= island.address %></td>
+    </tr>
+    <tr>
+      <th scope="row">Number of Guest</th>
+      <td><%= island.number_of_guests %></td>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+      <td><%= island.price_per_night %> €</td>
+    </tr>
+  </tbody>
+</table>
