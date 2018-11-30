@@ -71,10 +71,12 @@
         <%  @booking = Booking.new%>
         <div class="calendar-container">
           <div class="calendar-form-wrapper">
-            <%= simple_form_for :search, method: "get" do |f| %>
-              <%= f.input :starts_at, input_html: { id: "range_start" }, class: "start-date-text" %>
-              <%= f.input :ends_at, input_html: { id: "range_end" }, style: "width: 200px;" %>
-              <%= f.button :submit, "Go", class: "btn btn-primary" %>
+            <%= simple_form_for @booking, url: island_bookings_path(@island) do |f| %>
+
+              <%= f.input :start_at, input_html: { id: "range_start" }, class: "start-date-text" %>
+              <%= f.input :end_at, input_html: { id: "range_end" }, style: "width: 200px;" %>
+              <div><%= f.button :submit, "Go", class: "btn btn-blue" %></div>
+
             <% end %>
           </div>
         </div>
