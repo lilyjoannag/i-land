@@ -1,15 +1,17 @@
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My bookings</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Booking requests</a></li>
-  </ul>
+  <div class="bookings-tab">
+    <ul class="nav nav-tabs nav-tabs-font" role="tablist">
+      <li role="presentation" class="active tab-for-booking"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My bookings</a></li>
+      <li role="presentation" class="tab-for-rental"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Booking requests</a></li>
+    </ul>
+  </div>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
 
       <div class="container bookings">
-        <h1>My bookings</h1>
+        <h1><strong>My bookings<strong></h1>
           <div class="row">
             <% current_user.bookings.each do |booking| %>
               <div class="col-md-4">
