@@ -4,18 +4,18 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
   def create
-    @booking = Booking.new(booking_params)
-    @island = Island.find(params[:island_id])
-    @booking.user = current_user
-    @booking.island = @island
-    @booking.status = "pending"
-    authorize @booking
-    if @booking.save!
-      redirect_to user_booking_path(current_user, @booking)
-    else
-      redirect_to island_path(@island)
+      @booking = Booking.new(booking_params)
+      @island = Island.find(params[:island_id])
+      @booking.user = current_user
+      @booking.island = @island
+      @booking.status = "pending"
+      authorize @booking
+      if @booking.save!
+        redirect_to user_booking_path(current_user, @booking)
+      else
+        redirect_to island_path(@island)
+      end
     end
-  end
   def show
     authorize @booking
   end
@@ -25,7 +25,10 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     @booking.update(status: params[:booking][:status])
-    redirect_to user_bookings_path(current_user)
+    respond_to do |format|
+      format.html { redirect_to user_bookings_path(current_user)}
+      format.js
+    end
   end
   def destroy
     authorize @booking

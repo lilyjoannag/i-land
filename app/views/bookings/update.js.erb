@@ -1,0 +1,8 @@
+
+
+function changeCard(newCard) {
+    const card = document.querySelector('[data-island-id="<%= @booking.id %>"]');
+    card.outerHTML = newCard;
+};
+
+changeCard("<%= j render 'card', booking: @booking %>")

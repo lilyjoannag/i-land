@@ -106,6 +106,7 @@ p {
   width: 300px;
   bottom: 30px;
   right: 30px;
+
 }
 
 .show-card {
@@ -118,6 +119,18 @@ p {
 
 
 }
+.edit-button-container {
+  position: absolute;
+  height: 60%;
+  width: 300px;
+  bottom: 90px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
 
 .photo-element {
   background-size: cover;
@@ -139,19 +152,12 @@ padding: 30px;
 }
 
 .edit-island-button {
-  margin-top: 15px;
-  padding: 13px;
-  justify-content: center;
-  align-content: center;
+
 }
 
-.edit-island-button a {
-  color: white;
-}
 
-.edit-island-button:hover a {
-  color: black;
-}
+
+
 
 .description-text-container-show {
   width: 290px;

@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <a class="navbar-island-item navbar-island-link" data-toggle="modal" data-target="#formModal">
+      <a class="navbar-island-item btn-white " data-toggle="modal" data-target="#formModal">
         Host a dream
       </a>
 
@@ -22,7 +22,12 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-island-item">
         <div class="dropdown">
-          <%= cl_image_tag(current_user.photo_user, class: "avatar dropdown-toggle", id: "navbar-island-menu", "data-toggle" => "dropdown") %>
+          <% if  current_user.photo_user.present? %>
+             <%= cl_image_tag(current_user.photo_user, class: "avatar dropdown-toggle", id: "navbar-island-menu", "data-toggle" => "dropdown") %>
+            <% else %>
+              <%= cl_image_tag(image_path("user-default.jpg"), class: "avatar dropdown-toggle", id: "navbar-island-menu", "data-toggle" => "dropdown") %>
+            <% end %>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-island-dropdown-menu">
             <li>
               <%= link_to user_path(current_user) do %>
@@ -51,14 +56,26 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-island-dropdown-menu">
         <% if user_signed_in? %>
-          <li><%= link_to "My reservations", "#" %></li>
-          <li><%= link_to "Add a dream", "#" %></li>
-          <li><%= link_to "Profile", "#" %></li>
-          <li><%= link_to "Settings", "#" %></li>
-          <li><%= link_to "Sign-out", "#" %></li>
+          <li><%= link_to "My reservations", user_bookings_path(current_user) %></li>
+          <li><a class="navbar-island-item navbar-island-button " data-toggle="modal" data-target="#formModal">
+              Host a dream
+            </a>
+          </li>
+          <li><%= link_to user_path(current_user) do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+          </li>
+
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+          </li>
         <% else %>
-          <li><%= link_to "Sign-up", "#" %></li>
-          <li><%= link_to "Add a dream", "#" %></li>
+          <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-island-item navbar-island-link" %></li>
+          <li><%= link_to t(".sign_up", default: "Register"), new_user_registration_path, class: "navbar-island-item navbar-island-link" %></li>
+          <li><a class="navbar-island-item navbar-island-button " data-toggle="modal" data-target="#formModal">
+              Host a dream
+            </a></li>
         <% end %>
       </ul>
     </div>
@@ -81,7 +98,7 @@
           <%= simple_form_for(Island.new) do |f| %>
             <%= f.input :name, input_html: { placeholder: "Ila vida" } %>
             <%= f.input :address, input_html: { placeholder: "13 rue Paradise" } %>
-            <%= f.submit "Add island", class: "btn btn-pink" %>
+            <%= f.submit "Add island", class: "btn btn-blue" %>
           <% end %>
       </div>
     </div>
