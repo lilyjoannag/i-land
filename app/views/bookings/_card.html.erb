@@ -1,22 +1,47 @@
+<%= link_to island_path(booking.island), class: "no-text-deco" do %>
 <div class="card" data-island-id="<%= booking.id %>">
 
     <%#= booking.island.photo_1 %>
-    <%= image_tag("Island_5.jpg", class:"island_photo") %>
+     <% if  !booking.island.photo_1.present? && !booking.island.photo_2.present? && !booking.island.photo_3.present?%>
+    <%= cl_image_tag booking.island.default_photo, class:"island_photo" %>
+    <% end %>
+    <% if booking.island.photo_1.present? %>
+    <%= cl_image_tag booking.island.photo_1, class:"island_photo" %>
+    <% end %>
+    <% if booking.island.photo_2.present? %>
+    <%= cl_image_tag booking.island.photo_2, class:"island_photo" %>
+    <% end %>
+    <% if booking.island.photo_3.present? %>
+    <%= cl_image_tag booking.island.photo_3, class:"island_photo" %>
+    <% end %>
+    <% if !booking.island.user.photo_user.present? %>
     <%= image_tag("user-default.jpg", class:"owner_photo") %>
+    <% else %>
+    <%= cl_image_tag booking.user.photo_user, class:"owner_photo" %>
+    <% end %>
 
   <!--  <div class="owner">
-     <%#= booking.island.user.photo_user %>
+     <%#= booking.user.photo_user %>
 
    </div> -->
   <div class="island_name">
     <%= booking.island.name %>
   </div>
+    <% if booking.status != 'pending' %>
+        <% if booking.status == "accepted" %>
+        <p class="accepted"><em>accepted</em></p>
+        <% else %>
+        <p class="declined"><em>declined</em></p>
+        <% end  %>
+    <% end %>
+
   <div class="d-flex">
 
     <div class="dates col-6">
       <p> From <%= booking.start_at %></p>
       <p> To <%= booking.end_at %></p>
     </div>
+    <div><%= booking.total_price %></div>
     <% if booking.status == 'pending' %>
     <div class="button_status">
       <div class="accept">
@@ -32,13 +57,7 @@
           <% end %>
       </div>
     </div>
-      <% else %>
-        <% if booking.status == "accepted" %>
-        <p class="accepted">accepted</p>
-        <% else %>
-        <p class="declined">declined</p>
-        <% end  %>
-
       <% end %>
   </div>
 </div>
+<% end %>
