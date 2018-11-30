@@ -106,6 +106,7 @@ class IslandsController < ApplicationController
     @island = Island.find(params[:id])
     authorize @island
     @island.destroy
+    redirect_to islands_path
   end
 
   private
