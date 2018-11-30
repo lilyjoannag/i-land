@@ -28,9 +28,14 @@
       </div>
       <div class="user-islands-container">
         <% current_user.islands.each do |island|  %>
+        <% if  !island.photo_1.present? && !island.photo_3.present? && !island.photo_3.present?%>
+            <% path = island.default_photo %>
+        <% else %>
+          <% path = island.photo_1 %>
+        <% end %>
          <div class="cards-without-carousel">
             <div class="card-index">
-              <div class="card-body">
+              <div class="card-body" style=<%="background:url(#{path})" %> >
                 <h2><%= island.name%></h2>
                   <div class="description-hidden">
                    <p><%=  island.description%></p>
