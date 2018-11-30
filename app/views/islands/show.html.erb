@@ -71,8 +71,9 @@
             <p>Booking Status:<br><%= booking.status %></p>
             <p>Total Price:<br><%= booking.total_price %></p>
             <br>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+
       <% else %>
         <h3>Choose your dates</h3>
         <%  @booking = Booking.new%>
