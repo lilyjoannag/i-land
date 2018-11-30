@@ -2,12 +2,14 @@
 <%= simple_form_for(@island) do |f| %>
   <div class="photo-edit">
     <h3>Add Photos of Your Island</h3>
-    <%= f.input :photo_1 %>
-    <%= f.input :photo_1_cache, as: :hidden %>
-    <%= f.input :photo_2 %>
-    <%= f.input :photo_2_cache, as: :hidden %>
-    <%= f.input :photo_3 %>
-    <%= f.input :photo_3_cache, as: :hidden %>
+    <div class="photo-upload-features">
+      <%= f.input :photo_1, class: "photo-upload" %>
+      <%= f.input :photo_1_cache, as: :hidden, class: "photo-upload" %>
+      <%= f.input :photo_2, class: "photo-upload"  %>
+      <%= f.input :photo_2_cache, as: :hidden, class: "photo-upload" %>
+      <%= f.input :photo_3, class: "photo-upload" %>
+      <%= f.input :photo_3_cache, as: :hidden, class: "photo-upload" %>
+    </div>
   </div>
 <div class="wrapper-show">
   <div class="grid">
