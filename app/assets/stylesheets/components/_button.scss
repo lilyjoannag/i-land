@@ -20,3 +20,44 @@
   background-color: white;
   opacity: 1;
 }
+
+
+.btn-red {
+  height: 40px;
+  width: 200px;
+  color: #ea5455;
+  background-color: white;
+  border-color: #ea5455;
+  border-radius:50px;
+  transition: all 0.3s ease;
+}
+
+.delete-button {
+  margin-top: 15px;
+}
+
+.btn-red:hover {
+  background: #ea5455;
+  color:white;
+
+}
+.btn-blue {
+  color: white;
+  background-color: #152b42;
+  border-color: white;
+  border-radius:50px;
+  transition: all 0.3s ease;
+  height: 40px;
+  width: 200px;
+}
+
+.btn-blue:hover {
+  color: white;
+  width: 220px;
+  height: 45px;
+
+}
+
+.btn-filter {
+  margin: 20px auto;
+}
