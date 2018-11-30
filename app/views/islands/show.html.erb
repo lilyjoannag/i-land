@@ -57,14 +57,21 @@
     </div>
     <div class="show-card dates-element">
       <% if current_user == @island.user %>
-        <h3>Upcoming Bookings</h3>
-        <% @island.bookings.each do |booking| %>
-          <p>Renter: <%= booking.user %></p>
-          <p>Start Date:<%= booking.start_at %></p>
-          <p>End Date:<%= booking.end_at %></p>
-          <p>Booking Status:<%= booking.status %></p>
-          <p>Total Price:<%= booking.total_price %></p>
-          <br>
+        <div class="upcoming-bookings-container">
+          <h3>Upcoming Bookings</h3>
+          <% @island.bookings.each do |booking| %>
+            <% if booking.user.first_name.present? && booking.user.last_name.present?%>
+              <% name = "#{booking.user.first_name} #{booking.user.last_name}"%>
+            <% else %>
+              <% name = booking.user.email %>
+            <% end %>
+            <p>Renter:<br><%= name %></p>
+            <p>Start Date:<br><%= booking.start_at %></p>
+            <p>End Date:<br><%= booking.end_at %></p>
+            <p>Booking Status:<br><%= booking.status %></p>
+            <p>Total Price:<br><%= booking.total_price %></p>
+            <br>
+          </div>
         <% end %>
       <% else %>
         <h3>Choose your dates</h3>
