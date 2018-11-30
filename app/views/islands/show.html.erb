@@ -39,17 +39,19 @@
           <h4><i class="fas fa-dollar-sign"></i></h4>
         </div>
       </div>
-      <div class="show-card owner-element">
-        <% if current_user == @island.user %>
-          <button class="edit-island-button btn-pink"><%= link_to "Edit Your Island", edit_island_path(@island) %></button>
-          <% else %>
-            <h3>Owner</h3>
-            <% @island.user %>
-            <p>Contact: <%= User.find(@island.user_id).email %></p>
-        <% end %>
+      <% unless current_user == @island.user %>
+        <div class="show-card owner-element">
+          <h3>Owner</h3>
+          <% @island.user %>
+          <p>Contact: <%= User.find(@island.user_id).email %></p>
+        </div>
+      <% end %>
+
+      <% if current_user == @island.user %>
+      <div class="edit-button-container">
+        <%= link_to "Edit Your Island", edit_island_path(@island) , class: "btn edit-island-button btn-blue"%>
       </div>
-
-
+      <% end %>
 
 
     </div>
