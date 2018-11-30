@@ -1,7 +1,21 @@
 .side-search {
-  background: #4a4a48;
+  background: white;
   width: 400px;
   padding: 30px;
+  box-shadow: 3px 3px 6px lightgrey;
+  color: #152b42;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  input::placeholder {
+    color: #152b42;
+    opacity: 0.2;
+
+  }
+
+  h2 {
+    margin-bottom: 50px;
+  }
 }
 .search { }
 
@@ -12,5 +26,12 @@
 
 .distance-input, .max-price-input {
   margin-bottom: 50px;
+}
+.location-input {
+  height: 30px;
+}
+.price , .location {
+  display: flex;
+  justify-content: space-between;
 }
 
