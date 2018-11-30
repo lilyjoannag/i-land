@@ -8,6 +8,7 @@
   top: 60px;
   height: calc(100vh - 60px);
   input::placeholder {
+    font-size: 15px;
     color: #152b42;
     opacity: 0.2;
 
@@ -21,7 +22,7 @@
 
 .search-form input{
   display: block;
-
+  border-radius: 4px;
 }
 
 .distance-input, .max-price-input {
@@ -34,4 +35,3 @@
   display: flex;
   justify-content: space-between;
 }
-
