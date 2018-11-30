@@ -35,7 +35,12 @@ class IslandsController < ApplicationController
            {
              lng: island.longitude,
              lat: island.latitude,
-
+            infoWindow: render_to_string(partial: "infowindow", locals: {
+              island: island,
+              number_of_guests: island.number_of_guests,
+              address: island.address,
+              price_per_night: island.price_per_night
+            })
              }
       end
 
@@ -59,7 +64,11 @@ class IslandsController < ApplicationController
          {
            lng: island.longitude,
            lat: island.latitude,
-           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island,
+              number_of_guests: island.number_of_guests,
+              address: island.address,
+              price_per_night: island.price_per_night,
+               })
          }
     end
     authorize @island
@@ -71,7 +80,10 @@ class IslandsController < ApplicationController
          {
            lng: island.longitude,
            lat: island.latitude,
-           infoWindow: render_to_string(partial: "infowindow", locals: { island: island })
+           infoWindow: render_to_string(partial: "infowindow", locals: { island: island,
+              number_of_guests: island.number_of_guests,
+              address: island.address,
+              price_per_night: island.price_per_night })
          }
     end
     authorize @island
