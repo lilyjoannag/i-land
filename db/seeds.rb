@@ -25,7 +25,7 @@ Garaisland = Island.create!(name: "Gara Island",price_per_night: 20000, number_o
 Saintbarth = Island.create!(name: "Saint-Barth",price_per_night: 90000, number_of_guests: 40, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: helo, address: "Antilles", default_photo: "https://www.google.fr/search?q=island+saint+barth&tbm=isch&source=lnt&tbs=isz:l&sa=X&ved=0ahUKEwjy87i3iPzeAhWQx4UKHV4FCJIQpwUIHw&biw=1440&bih=790&dpr=2#imgrc=Bl1nB3cSCHcfPM:")
 Mnembaisland = Island.create!(name: "Mnemba Island",price_per_night: 420000, number_of_guests: 5, description:"This magical island off the coast of the Turks and Caicos is an isolated gem. Surrounded by an incredible barrier reef, you can be sure to swim in the most idyllic waters in complete peace.", user: helo, address: "Zanzibar", default_photo: "https://www.google.fr/search?biw=1440&bih=790&tbs=isz%3Al&tbm=isch&sa=1&ei=ESYBXKuZBcyia72Gr5AJ&q=zanzibar&oq=zan&gs_l=img.3.0.0j0i67j0j0i67j0j0i67j0l4.23168.24067..25738...1.0..0.55.210.4......1....1..gws-wiz-img.......0i10.kFmKh4sw9Ro#imgrc=IU4Y4m9s5lyxnM:")
 
-Booking.create!(island: epsilon, user: lily, start_at: "2018-10-23", end_at: "2018-12-31")
+Booking.create!(island: Epsilon, user: lily, start_at: "2018-10-23", end_at: "2018-12-31")
 Booking.create!(island: Saintpierre, user: anna, start_at: "2018-9-23", end_at: "2018-12-31")
 Booking.create!(island: Isleofvenus, user: nico, start_at: "2018-8-23", end_at: "2018-12-31")
 Booking.create!(island: Saintbarth, user: helo, start_at: "2018-12-23", end_at: "2018-12-31")
