@@ -31,11 +31,11 @@
       </div>
       <div class="show-card infos-element">
         <div >
-          <h4>20</h4>
+          <h4><%= @island.number_of_guests %></h4>
           <h4><i class="fas fa-users"></i></h4>
         </div>
         <div>
-          <h4>50000</h4>
+          <h4><%= @island.price_per_night %></h4>
           <h4><i class="fas fa-dollar-sign"></i></h4>
         </div>
       </div>
@@ -78,7 +78,7 @@
         <%  @booking = Booking.new%>
         <div class="calendar-container">
           <div class="calendar-form-wrapper">
-            <%= simple_form_for @booking, url: island_bookings_path(@island) do |f| %>
+            <%= simple_form_for @booking url: island_bookings_path(@island),  do |f| %>
 
               <%= f.input :start_at, input_html: { id: "range_start" }, class: "start-date-text" %>
               <%= f.input :end_at, input_html: { id: "range_end" }, style: "width: 200px;" %>
