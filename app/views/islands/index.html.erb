@@ -1,22 +1,39 @@
 <div class="wrapper">
   <div class="side-search">
-    <h1>Filters</h1>
+    <h2>Filters</h2>
     <%= form_tag islands_path, method: :get, class: "search-form" do %>
+      <div class="location">
+        <div>
+          <%= label_tag(:query_area, "Location") %>
+          <%= text_field_tag :query_area,
+            params[:query_area],
+            class: "location-input",
+            placeholder: "Area of the globe"
+          %>
+        </div>
 
-      <%= text_field_tag :query_area,
-        params[:query_area],
-        class: "search search-area",
-        placeholder: "Area of the globe"
-      %>
-      <%= label_tag(:distance, "Distance") %>
-      <%= number_field(:query, :distance, in: 1..1000, step: 10, class: "distance-input", placeholder: "50km") %>
-      <%= label_tag(:min_price, "Minimal price") %>
-      <%= number_field(:query, :min_price, in: 1000..100000, step: 1000, placeholder: "10000€") %>
-      <%= label_tag(:max_price, "Maximal price") %>
-      <%= number_field(:query, :max_price, in: 1000..100000, step: 1000, class: "max-price-input", placeholder: "50000€") %>
+        <div>
+          <%= label_tag(:distance, "Distance") %>
+          <%= number_field(:query, :distance, in: 1..1000, step: 10, class: "distance-input", placeholder: "50km") %>
+        </div>
+
+      </div>
+
+      <div class="price">
+        <div class="min-price">
+          <%= label_tag(:min_price, "Minimal price") %>
+          <%= number_field(:query, :min_price, in: 1000..100000, step: 1000, placeholder: "10000€") %>
+        </div>
+        <div class="max-price">
+          <%= label_tag(:max_price, "Maximal price") %>
+          <%= number_field(:query, :max_price, in: 1000..100000, step: 1000, class: "max-price-input", placeholder: "50000€") %>
+        </div>
+      </div>
+
+
       <%= label_tag(:guest, "Number of people") %>
       <%= number_field(:query, :guest, in: 1..50, step: 1, placeholder: "20") %>
-      <%= submit_tag "Apply filters" %>
+      <%= submit_tag "Apply filters", class: "btn btn-blue btn-filter" %>
     <% end %>
 
   </div>
