@@ -33,7 +33,12 @@
       </div>
     </div>
       <% else %>
-        <%= booking.status %>
+        <% if booking.status == "accepted" %>
+        <p class="accepted">accepted</p>
+        <% else %>
+        <p class="declined">declined</p>
+        <% end  %>
+
       <% end %>
   </div>
 </div>
