@@ -1,7 +1,7 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">My bookings</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Booking requests</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Rental requests</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -13,11 +13,27 @@
           <div class="row">
             <% current_user.bookings.each do |booking| %>
               <div class="col-md-4">
+                <%= link_to island_path(booking.island) do %>
                 <div class="card-booking">
 
                     <%#= booking.island.photo_1 %>
-                    <%= image_tag("Island_5.jpg", class:"island_photo") %>
-                    <%= image_tag("user-default.jpg", class:"owner_photo") %>
+                    <% if  !booking.island.photo_1.present? && !booking.island.photo_2.present? && !booking.island.photo_3.present?%>
+                   <%= cl_image_tag booking.island.default_photo, class:"island_photo" %>
+                   <% end %>
+                   <% if booking.island.photo_1.present? %>
+                   <%= cl_image_tag booking.island.photo_1, class:"island_photo" %>
+                   <% end %>
+                   <% if booking.island.photo_2.present? %>
+                   <%= cl_image_tag booking.island.photo_2, class:"island_photo" %>
+                   <% end %>
+                   <% if booking.island.photo_3.present? %>
+                   <%= cl_image_tag booking.island.photo_3, class:"island_photo" %>
+                   <% end %>
+                   <% if !booking.island.user.photo_user.present? %>
+                   <%= image_tag("user-default.jpg", class:"owner_photo") %>
+                   <% else %>
+                   <%= cl_image_tag booking.island.user.photo_user, class:"owner_photo" %>
+                   <% end %>
 
                   <!--  <div class="owner">
                      <%#= booking.island.user.avatar %>
@@ -25,8 +41,8 @@
                    </div> -->
                   <div class="island_name">
                     <%= booking.island.name %>
-                    <%= booking.status %>
                   </div>
+                  <div class="<%= booking.status %>"><em><%= booking.status %></em></div>
                   <div class="d-flex">
                     <div class="details col-6">
                       <p><i class="fas fa-users"></i> <%=  booking.island.number_of_guests %></p>
@@ -38,6 +54,7 @@
                     </div>
                   </div>
                 </div>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -47,7 +64,7 @@
 
     <div role="tabpanel" class="tab-pane" id="profile">
       <div class="container bookings">
-              <h1>Booking requests</h1>
+              <h1>Rental requests</h1>
                 <div class="row">
                   <% current_user.bookings_as_owner.each do |booking| %>
                     <div class="col-md-4">

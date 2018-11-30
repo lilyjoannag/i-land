@@ -11,21 +11,23 @@
   .card-booking {
   text-align:center;
   width:300px;
-  height:450px;
+  height:475px;
   background-color:#e6e6e666;
   margin:10px 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
+      color:#152b42;
 }
 
   .card {
   text-align:center;
   width:300px;
-  height:450px;
+  height:475px;
   background-color:#e6e6e666;
   margin:10px 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
+      color:#152b42;
 }
 
 .card:hover {
@@ -93,11 +95,18 @@
 }
 
 .accepted {
-  color:#0eb80e
+  color:#0eb80e;
 }
 
 
 .declined {
-  color:#d23434
+  color:#d23434;
+}
+.pending{
+  color:#d4931b;
+}
+
+.no-text-deco{
+  text-decoration:none;
 }
 
